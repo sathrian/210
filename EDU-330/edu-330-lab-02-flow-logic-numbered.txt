@@ -1,0 +1,536 @@
+     1	== 2021-09-17 17:23:53.933 +0000 ==
+     2	Packet received at ingress stage, tag 0, type ORDERED
+     3	Packet info: len 66 port 17 interface 17 vsys 1
+     4	  wqe index 12302 packet 0x0xc00291c0c0, HA: 0
+     5	Packet decoded dump:
+     6	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+     7	IP:     192.168.1.20->192.168.50.10, protocol 6
+     8	        version 4, ihl 5, tos 0x02, len 52,
+     9	        id 18443, frag_off 0x4000, ttl 128, checksum 18430(0xfe47)
+    10	TCP:    sport 12367, dport 80, seq 3471168025, ack 0,
+    11	        reserved 0, offset 8, window 65535, checksum 59458,
+    12	        flags 0xc200 ( SYN), urgent data 0, l4 data len 0
+    13	TCP option:
+    14	00000000: 02 04 05 b4 01 03 03 08  01 01 04 02                ........ ....
+    15	Flow lookup, key word0 0x600060050304f word1 0
+    16	* Dos Profile NULL (NO) Index (0/0) *
+    17	Session setup: vsys 1
+    18	No active flow found, enqueue to create session
+    19	
+    20	
+    21	== 2021-09-17 17:23:53.933 +0000 ==
+    22	Packet received at slowpath stage, tag 151480027, type ATOMIC
+    23	Packet info: len 66 port 17 interface 17 vsys 1
+    24	  wqe index 12302 packet 0x0xc00291c0c0, HA: 0
+    25	Packet decoded dump:
+    26	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+    27	IP:     192.168.1.20->192.168.50.10, protocol 6
+    28	        version 4, ihl 5, tos 0x02, len 52,
+    29	        id 18443, frag_off 0x4000, ttl 128, checksum 18430(0xfe47)
+    30	TCP:    sport 12367, dport 80, seq 3471168025, ack 0,
+    31	        reserved 0, offset 8, window 65535, checksum 59458,
+    32	        flags 0xc200 ( SYN), urgent data 0, l4 data len 0
+    33	TCP option:
+    34	00000000: 02 04 05 b4 01 03 03 08  01 01 04 02                ........ ....
+    35	Session setup: vsys 1
+    36	PBF lookup (vsys 1) with application web-browsing
+    37	Session setup: ingress interface ethernet1/2 egress interface ethernet1/3 (zone 3)
+    38	NAT policy lookup, matched rule index 1
+    39	Policy lookup, matched rule index 0, 
+    40	Allocated new session 44187.
+    41	Rule: index=1 name=source-nat-to-dmz, cfg_pool_idx=3 cfg_fallback_pool_idx=0
+    42	NAT Rule: name=source-nat-to-dmz, cfg_pool_idx=3; Session: index=44187, nat_pool_idx=3
+    43	Packet matched vsys 1 NAT rule 'source-nat-to-dmz' (index 2),
+    44	source translation 192.168.1.20/12367 => 172.16.16.16/14305
+    45	Created session, enqueue to install
+    46	
+    47	
+    48	== 2021-09-17 17:23:53.934 +0000 ==
+    49	Packet received at fastpath stage, tag 44187, type ATOMIC
+    50	Packet info: len 66 port 17 interface 17 vsys 1
+    51	  wqe index 12302 packet 0x0xc00291c0c0, HA: 0
+    52	Packet decoded dump:
+    53	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+    54	IP:     192.168.1.20->192.168.50.10, protocol 6
+    55	        version 4, ihl 5, tos 0x02, len 52,
+    56	        id 18443, frag_off 0x4000, ttl 128, checksum 18430(0xfe47)
+    57	TCP:    sport 12367, dport 80, seq 3471168025, ack 0,
+    58	        reserved 0, offset 8, window 65535, checksum 59458,
+    59	        flags 0xc200 ( SYN), urgent data 0, l4 data len 0
+    60	TCP option:
+    61	00000000: 02 04 05 b4 01 03 03 08  01 01 04 02                ........ ....
+    62	Flow fastpath, session 44187
+    63	IP checksum valid
+    64	* Dos Profile NULL (NO) Index (0/0) *
+    65	* Dos Profile NULL (NO) Index (0/0) *
+    66	2021-09-17 17:23:53.934 +0000  pan_flow_process_fastpath(src/pan_flow_proc.c:3344): SESSION-DSCP: set session DSCP: 0x00
+    67	NAT session, run address/port translation
+    68	Syn Cookie: pan_reass(Init statete): c2s:0 c2s:nxtseq 3471168026 c2s:startseq 3471168026 c2s:win 0 c2s:st 3 c2s:newsyn 0 :: s2c:nxtseq 0 s2c:startseq 0 s2c:win 65535 s2c:st 0 s2c:newsyn 0 ack 0 nosyn 0 plen 0
+    69	Forwarding lookup, ingress interface 17
+    70	L3 mode, virtual-router 1
+    71	Route lookup in virtual-router 1, IP 192.168.50.10
+    72	Route found, interface ethernet1/3, zone 3
+    73	Resolve ARP for IP 192.168.50.10 on interface ethernet1/3
+    74	ARP entry found on interface 18
+    75	Transmit packet on port 18
+    76	
+    77	
+    78	== 2021-09-17 17:23:53.935 +0000 ==
+    79	Packet received at ingress stage, tag 0, type ORDERED
+    80	Packet info: len 66 port 18 interface 18 vsys 1
+    81	  wqe index 11217 packet 0x0xc003027cc0, HA: 0
+    82	Packet decoded dump:
+    83	L2:     00:50:56:b1:fe:8e->00:50:56:b1:a5:1e, type 0x0800
+    84	IP:     192.168.50.10->172.16.16.16, protocol 6
+    85	        version 4, ihl 5, tos 0x00, len 52,
+    86	        id 0, frag_off 0x4000, ttl 64, checksum 61835(0x8bf1)
+    87	TCP:    sport 80, dport 14305, seq 2648883806, ack 3471168026,
+    88	        reserved 0, offset 8, window 29200, checksum 5292,
+    89	        flags 0x1200 ( SYN ACK), urgent data 0, l4 data len 0
+    90	TCP option:
+    91	00000000: 02 04 05 b4 01 01 04 02  01 03 03 06                ........ ....
+    92	Flow lookup, key word0 0x6000337e10050 word1 0
+    93	Flow 88375 found, state 2, HA 0
+    94	Active flow, enqueue to fastpath process, type 0
+    95	
+    96	
+    97	== 2021-09-17 17:23:53.935 +0000 ==
+    98	Packet received at fastpath stage, tag 44187, type ATOMIC
+    99	Packet info: len 66 port 18 interface 18 vsys 1
+   100	  wqe index 11217 packet 0x0xc003027cc0, HA: 0
+   101	Packet decoded dump:
+   102	L2:     00:50:56:b1:fe:8e->00:50:56:b1:a5:1e, type 0x0800
+   103	IP:     192.168.50.10->172.16.16.16, protocol 6
+   104	        version 4, ihl 5, tos 0x00, len 52,
+   105	        id 0, frag_off 0x4000, ttl 64, checksum 61835(0x8bf1)
+   106	TCP:    sport 80, dport 14305, seq 2648883806, ack 3471168026,
+   107	        reserved 0, offset 8, window 29200, checksum 5292,
+   108	        flags 0x1200 ( SYN ACK), urgent data 0, l4 data len 0
+   109	TCP option:
+   110	00000000: 02 04 05 b4 01 01 04 02  01 03 03 06                ........ ....
+   111	Flow fastpath, session 44187
+   112	IP checksum valid
+   113	* Dos Profile NULL (NO) Index (0/0) *
+   114	NAT session, run address/port translation
+   115	Syn Cookie: pan_reass(Init statete): c2s:1 c2s:nxtseq 3471168026 c2s:startseq 3471168026 c2s:win 29200 c2s:st 3 c2s:newsyn 0 :: s2c:nxtseq 2648883807 s2c:startseq 2648883807 s2c:win 65535 s2c:st 3 s2c:newsyn 0 ack 3471168026 nosyn 0 plen 0
+   116	Forwarding lookup, ingress interface 18
+   117	L3 mode, virtual-router 1
+   118	Route lookup in virtual-router 1, IP 192.168.1.20
+   119	Route found, interface ethernet1/2, zone 6
+   120	Resolve ARP for IP 192.168.1.20 on interface ethernet1/2
+   121	ARP entry found on interface 17
+   122	Transmit packet on port 17
+   123	
+   124	
+   125	== 2021-09-17 17:23:53.935 +0000 ==
+   126	Packet received at ingress stage, tag 0, type ORDERED
+   127	Packet info: len 60 port 17 interface 17 vsys 1
+   128	  wqe index 12302 packet 0x0xc0028a3640, HA: 0
+   129	Packet decoded dump:
+   130	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+   131	IP:     192.168.1.20->192.168.50.10, protocol 6
+   132	        version 4, ihl 5, tos 0x00, len 40,
+   133	        id 18447, frag_off 0x4000, ttl 128, checksum 20990(0xfe51)
+   134	TCP:    sport 12367, dport 80, seq 3471168026, ack 2648883807,
+   135	        reserved 0, offset 5, window 1024, checksum 50563,
+   136	        flags 0x1000 ( ACK), urgent data 0, l4 data len 0
+   137	TCP option:
+   138	Flow lookup, key word0 0x600060050304f word1 0
+   139	Flow 88374 found, state 2, HA 0
+   140	Active flow, enqueue to fastpath process, type 0
+   141	
+   142	
+   143	== 2021-09-17 17:23:53.935 +0000 ==
+   144	Packet received at fastpath stage, tag 44187, type ATOMIC
+   145	Packet info: len 60 port 17 interface 17 vsys 1
+   146	  wqe index 12302 packet 0x0xc0028a3640, HA: 0
+   147	Packet decoded dump:
+   148	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+   149	IP:     192.168.1.20->192.168.50.10, protocol 6
+   150	        version 4, ihl 5, tos 0x00, len 40,
+   151	        id 18447, frag_off 0x4000, ttl 128, checksum 20990(0xfe51)
+   152	TCP:    sport 12367, dport 80, seq 3471168026, ack 2648883807,
+   153	        reserved 0, offset 5, window 1024, checksum 50563,
+   154	        flags 0x1000 ( ACK), urgent data 0, l4 data len 0
+   155	TCP option:
+   156	Flow fastpath, session 44187
+   157	IP checksum valid
+   158	NAT session, run address/port translation
+   159	Forwarding lookup, ingress interface 17
+   160	L3 mode, virtual-router 1
+   161	Route lookup in virtual-router 1, IP 192.168.50.10
+   162	Route found, interface ethernet1/3, zone 3
+   163	Resolve ARP for IP 192.168.50.10 on interface ethernet1/3
+   164	ARP entry found on interface 18
+   165	Transmit packet on port 18
+   166	
+   167	
+   168	== 2021-09-17 17:23:53.935 +0000 ==
+   169	Packet received at ingress stage, tag 0, type ORDERED
+   170	Packet info: len 315 port 17 interface 17 vsys 1
+   171	  wqe index 11217 packet 0x0xc001a9a840, HA: 0
+   172	Packet decoded dump:
+   173	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+   174	IP:     192.168.1.20->192.168.50.10, protocol 6
+   175	        version 4, ihl 5, tos 0x00, len 301,
+   176	        id 18448, frag_off 0x4000, ttl 128, checksum 19453(0xfd4b)
+   177	TCP:    sport 12367, dport 80, seq 3471168026, ack 2648883807,
+   178	        reserved 0, offset 5, window 1024, checksum 40922,
+   179	        flags 0x1800 ( ACK PSH), urgent data 0, l4 data len 261
+   180	TCP option:
+   181	Flow lookup, key word0 0x600060050304f word1 0
+   182	Flow 88374 found, state 2, HA 0
+   183	Active flow, enqueue to fastpath process, type 0
+   184	
+   185	
+   186	== 2021-09-17 17:23:53.935 +0000 ==
+   187	Packet received at fastpath stage, tag 44187, type ATOMIC
+   188	Packet info: len 315 port 17 interface 17 vsys 1
+   189	  wqe index 11217 packet 0x0xc001a9a840, HA: 0
+   190	Packet decoded dump:
+   191	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+   192	IP:     192.168.1.20->192.168.50.10, protocol 6
+   193	        version 4, ihl 5, tos 0x00, len 301,
+   194	        id 18448, frag_off 0x4000, ttl 128, checksum 19453(0xfd4b)
+   195	TCP:    sport 12367, dport 80, seq 3471168026, ack 2648883807,
+   196	        reserved 0, offset 5, window 1024, checksum 40922,
+   197	        flags 0x1800 ( ACK PSH), urgent data 0, l4 data len 261
+   198	TCP option:
+   199	Flow fastpath, session 44187
+   200	IP checksum valid
+   201	NAT session, run address/port translation
+   202	session 44187 packet sequeunce old 0 new 1
+   203	192.168.1.20[12367]-->192.168.50.10[80]
+   204	2021-09-17 17:23:53.936 +0000  pan_ctd_session_init(pan_ctd.c:3087): ******** session_init app= 109, profileid = 1, decoder_appid = 109
+   205	2021-09-17 17:23:53.937 +0000 debug: pan_ctd_session_init(pan_ctd.c:3107): is_url_cache_needed 0
+   206	2021-09-17 17:23:53.937 +0000  pan_ctd_flow_state_verify(pan_ctd.c:6172): pan_ctd_process_decoder(work 0xe013b39340, app 109): 192.168.1.20[12367]-->192.168.50.10[80]
+   207	2021-09-17 17:23:53.937 +0000 debug: pan_ctd_process_decoder(pan_ctd.c:6272): sp 44187 cur work 0xe013b39340(work 0xe013b39340) packet seq 0 queued 1 cfp seq 0
+   208	192.168.1.20[12367]-->192.168.50.10[80]
+   209	2021-09-17 17:23:53.937 +0000  pan_ctd_run_vm(pan_ctd.c:5106): 
+   210		work 0xe013b39340 app 109 pkt seq 0 plen 261 cfp seq 0
+   211	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_run(pan_sml_vm.c:4859): [VM RUN] seq 0x0(0) dlen 261 is_cts 1
+   212	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_run(pan_sml_vm.c:4861): [VM RUN] seq 0 dlen 261 is_cts 1
+   213	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 0
+   214	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 0
+   215	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2271 offset 0 seq 0 is_cts 1
+   216	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2273 offset 0 seq 0 is_cts 1
+   217	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5566): [field_end] offset 0 seq 0 is_cts 1
+   218	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5595): [end field] fid  2273 from 0 to 0 flag:a
+   219	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2278 offset 0 seq 0 is_cts 1
+   220	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_run(pan_sml_vm.c:4966): [vmrun] seq 0 doff 0 dlen 261 __dlen 261 is_cts 1
+   221	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_run(pan_sml_vm.c:4977): before run_dfa, doff = 0
+   222	2021-09-17 17:23:53.937 +0000 debug: pan_ctd_run_dfa(pan_sml_vm.c:4809): [RUN DFA] len 261
+   223	192.168.1.20[12367]-->192.168.50.10[80]
+   224	2021-09-17 17:23:53.937 +0000  pan_ctd_run_token(pan_ctd.c:7851): app 109(0xe04b080e90)
+   225	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_run_token(pan_sml_vm.c:5066): [work 0xe013b39340 RUN TOKEN] seq 0 dlen 261  session 44187
+   226	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_run_token(pan_sml_vm.c:5078): [work 0xe013b39340 get_l7_proc] seq 0 doff 0 
+   227	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_run_token(pan_sml_vm.c:5083): [work 0xe013b39340 get_l7_proc] seq 0 dlen 261 
+   228	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_run_token(pan_sml_vm.c:5334): [work 0xe013b39340 before RUN VM] seq 0 doff 0 dlen 261 is_cts 1
+   229	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4669): __pan_sml_vm_run seq 0 dlen 261 off 0
+   230	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 4
+   231	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2283 offset 4 seq 0 is_cts 1
+   232	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_set_field_flag(pan_sml_vm.c:6297): field this_flag :a0008000 field_flag: a0008008, b_grp 1
+   233	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5566): [field_end] offset 4 seq 0 is_cts 1
+   234	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5595): [end field] fid  2283 from 4 to 4 flag:a000800a
+   235	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2313 offset 4 seq 0 is_cts 1
+   236	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2313 offset 4 seq 0 is_cts 1
+   237	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   238	[skip] PC 48056 seq 0 skipoff 5 dlen 261
+   239	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 5
+   240	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 17
+   241	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_set_field_flag(pan_sml_vm.c:6297): field this_flag :5 field_flag: 28, b_grp 0
+   242	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_set_field_flag(pan_sml_vm.c:6297): field this_flag :f field_flag: 8028, b_grp 0
+   243	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2400 offset 17 seq 0 is_cts 1
+   244	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   245	[skip] PC 50449 seq 0 skipoff 20 dlen 261
+   246	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 20
+   247	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   248	[skip] PC 50513 seq 0 skipoff 21 dlen 261
+   249	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 21
+   250	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5566): [field_end] offset 21 seq 0 is_cts 1
+   251	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5595): [end field] fid  2400 from 11 to 15 flag:a
+   252	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2483 offset 21 seq 0 is_cts 1
+   253	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_set_field_flag(pan_sml_vm.c:6297): field this_flag :e field_flag: 4008, b_grp 0
+   254	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): [skip] state changed
+   255	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   256	[skip] PC 52121 seq 0 skipoff 22 dlen 261
+   257	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 22
+   258	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   259	[skip] PC 52130 seq 0 skipoff 32 dlen 261
+   260	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 32
+   261	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 85
+   262	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2483 offset 85 seq 0 is_cts 1
+   263	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   264	[skip] PC 55506 seq 0 skipoff 93 dlen 261
+   265	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 93
+   266	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 105
+   267	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2483 offset 105 seq 0 is_cts 1
+   268	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_set_field_flag(pan_sml_vm.c:6297): field this_flag :a0000800 field_flag: a0000808, b_grp 1
+   269	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   270	[skip] PC 55424 seq 0 skipoff 109 dlen 261
+   271	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 109
+   272	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   273	[skip] PC 55465 seq 0 skipoff 174 dlen 261
+   274	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 174
+   275	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5566): [field_end] offset 174 seq 0 is_cts 1
+   276	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5595): [end field] fid  2483 from 69 to ae flag:a000080a
+   277	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2483 offset 174 seq 0 is_cts 1
+   278	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 191
+   279	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 196
+   280	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   281	[skip] PC 53761 seq 0 skipoff 197 dlen 261
+   282	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 197
+   283	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   284	[skip] PC 53761 seq 0 skipoff 206 dlen 261
+   285	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 206
+   286	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 212
+   287	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2533 offset 212 seq 0 is_cts 1
+   288	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   289	[skip] PC 53977 seq 0 skipoff 213 dlen 261
+   290	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 213
+   291	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_set_field_flag(pan_sml_vm.c:6297): field this_flag :6 field_flag: 48, b_grp 0
+   292	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   293	[skip] PC 54149 seq 0 skipoff 217 dlen 261
+   294	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 217
+   295	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run(pan_sml_vm.c:4717): 
+   296	[skip] PC 54176 seq 0 skipoff 227 dlen 261
+   297	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 227
+   298	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5566): [field_end] offset 227 seq 0 is_cts 1
+   299	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5595): [end field] fid  2533 from d4 to e3 flag:4a
+   300	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2483 offset 227 seq 0 is_cts 1
+   301	2021-09-17 17:23:53.937 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 261
+   302	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5566): [field_end] offset 261 seq 0 is_cts 1
+   303	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5595): [end field] fid  2483 from e3 to 105 flag:a
+   304	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2574 offset 261 seq 0 is_cts 1
+   305	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_set_field_flag(pan_sml_vm.c:6297): field this_flag :a0001000 field_flag: a0001008, b_grp 1
+   306	2021-09-17 17:23:53.937 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5566): [field_end] offset 261 seq 0 is_cts 1
+   307	2021-09-17 17:23:53.938 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5595): [end field] fid  2574 from 105 to 105 flag:a000100a
+   308	2021-09-17 17:23:53.938 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2610 offset 261 seq 0 is_cts 1
+   309	2021-09-17 17:23:53.938 +0000 debug: pan_sml_vm_set_field_flag(pan_sml_vm.c:6297): field this_flag :e field_flag: 4008, b_grp 0
+   310	2021-09-17 17:23:53.938 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2273 offset 261 seq 0 is_cts 1
+   311	2021-09-17 17:23:53.938 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5566): [field_end] offset 261 seq 0 is_cts 1
+   312	2021-09-17 17:23:53.938 +0000 debug: pan_sml_vm_end_field(pan_sml_vm.c:5595): [end field] fid  2273 from 105 to 105 flag:a
+   313	2021-09-17 17:23:53.938 +0000 debug: pan_sml_vm_add_field(pan_sml_vm.c:5623): add_field fid 2278 offset 261 seq 0 is_cts 1
+   314	2021-09-17 17:23:53.938 +0000 debug: pan_sml_vm_run_token(pan_sml_vm.c:5355): 
+   315	[work 0xe013b39340] dleft = 0
+   316	2021-09-17 17:23:53.938 +0000 debug: __pan_sml_vm_run_impl(pan_sml_vm.c:2818): seq 0 doff 261
+   317	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4639): len 261 is_cts 1
+   318	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2271 flag 0xb @0
+   319	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2273 flag 0xa @0
+   320	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2278 flag 0xa @0
+   321	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2278 ends @4
+   322	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2283 flag 0xa000800a @4
+   323	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2283 ends @4
+   324	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2313 flag 0x802a @4
+   325	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2313 ends @17
+   326	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2400 flag 0xa @17
+   327	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2400 ends @21
+   328	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2483 flag 0x400a @21
+   329	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match_dlp_field(pan_ctd.c:4363): field 2483 @21 dlp enable flags 0x0
+   330	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2483 ends @85
+   331	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2483 flag 0xa @85
+   332	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2483 ends @105
+   333	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2483 flag 0xa000080a @105
+   334	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2483 ends @174
+   335	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2483 flag 0xa @174
+   336	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2483 ends @212
+   337	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2533 flag 0x4a @212
+   338	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2533 ends @227
+   339	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2483 flag 0xa @227
+   340	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2483 ends @261
+   341	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2574 flag 0xa000100a @261
+   342	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2574 ends @261
+   343	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2610 flag 0x400b @261
+   344	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match_dlp_field(pan_ctd.c:4363): field 2610 @261 dlp enable flags 0x0
+   345	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2610 ends @261
+   346	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2273 flag 0xa @261
+   347	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4778): field 2273 ends @261
+   348	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4720): field 2278 flag 0x8 @261
+   349	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match(pan_ctd.c:4859): Last field adjust 0 
+   350	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match_debug_print(pan_ctd.c:4589): [block 0] offset 0x0 len 261 flag 0xc86a
+   351	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match_debug_print(pan_ctd.c:4594): 1 block(s) for case conversion
+   352	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_pattern_match_debug_print(pan_ctd.c:4599): case conversion from offset 0x0 len 261
+   353	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_do_pattern_match(pan_ctd.c:4048): cfp : 0xe001921580 appid: 109, work 11217, cur_pkt 11217
+   354	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_do_pattern_match(pan_ctd.c:4162): [Regex] number of match 0
+   355	192.168.1.20[12367]-->192.168.50.10[80]
+   356	2021-09-17 17:23:53.938 +0000  pan_ctd_run_detector_i(pan_ctd.c:9429): app 109 time 3600
+   357	2021-09-17 17:23:53.938 +0000 debug: pan_urlcache_lookup(pan/src/pan_urlcache.c:930): In pan_urlcache_lookup, e 0, c 252
+   358	2021-09-17 17:23:53.938 +0000 debug: pan_urlcache_lookup(pan/src/pan_urlcache.c:966): TRIE LOOKUP: url www.test.lab/orange/
+   359	2021-09-17 17:23:53.938 +0000 debug: pan_urlcache_lookup(pan/src/pan_urlcache.c:1044): res 1, PAN_URL_TRIE_NOT_IN_DB 4, cat.num 1,cat.cat[0] 251, PAN_URL_CTGR_NOT_RESOLVED 252, pan_url_trie_is_rfs_expired 0, ucache->cloud_up 1
+   360	2021-09-17 17:23:53.938 +0000 debug: pan_urlcache_lookup_ext(pan/src/pan_urlcache.c:1131): Add to the vector
+   361	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_handle_url(pan_ctd.c:11403): appid 109(from 109), num. of categories 1
+   362	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_app_policy_lookup_i(pan_ctd.c:6822): Session id(44187): rule changed to internal-inside-dmz-http from internal-inside-dmz-http action(0); logging(2); profile id(1) category private-ip-addresses(10077)
+   363	192.168.1.20[12367]-->192.168.50.10[80]
+   364	2021-09-17 17:23:53.938 +0000  pan_ctd_url_log_action(pan_ctd.c:6400): 
+   365		url 'www.test.lab:0/orange' category block-list, action 0 sess 44187 idx 1
+   366	192.168.1.20[12367]-->192.168.50.10[80]
+   367	2021-09-17 17:23:53.938 +0000  pan_ctd_handle_url_denied_i(pan_ctd.c:6493): url action block, credential not matched
+   368	Flow action close for session 44187, option 2
+   369	Flow action send data for session 44187 direction S2C
+   370	Flow action close for session 44187, option 1
+   371	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_handle_reset_and_url(pan_ctd.c:11586): pan_ctd_handle_url() returns -7
+   372	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_run_detector_i(pan_ctd.c:9542): pan_ctd_handle_reset_and_url() returns -7
+   373	2021-09-17 17:23:53.938 +0000 debug: pan_ctd_process_packet_stage(pan_ctd.c:5462): pan_ctd_run_detector_i() failed 2
+   374	
+   375	
+   376	== 2021-09-17 17:23:53.938 +0000 ==
+   377	Packet received at forwarding stage, tag 44187, type ATOMIC
+   378	Packet info: len 54 port 17 interface 17 vsys 1
+   379	  wqe index 11463 packet 0x0xc003567780, HA: 0
+   380	Packet decoded dump:
+   381	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+   382	IP:     172.16.16.16->192.168.50.10, protocol 6
+   383	        version 4, ihl 5, tos 0x00, len 40,
+   384	        id 6069, frag_off 0x0000, ttl 64, checksum 18612(0xb448)
+   385	TCP:    sport 14305, dport 80, seq 3471168026, ack 2648883807,
+   386	        reserved 0, offset 5, window 1024, checksum 50057,
+   387	        flags 0x1400 ( ACK RST), urgent data 0, l4 data len 0
+   388	TCP option:
+   389	Forwarding lookup, ingress interface 17
+   390	L3 mode, virtual-router 1
+   391	Route lookup in virtual-router 1, IP 192.168.50.10
+   392	Route found, interface ethernet1/3, zone 3
+   393	Resolve ARP for IP 192.168.50.10 on interface ethernet1/3
+   394	ARP entry found on interface 18
+   395	Transmit packet on port 18
+   396	
+   397	
+   398	== 2021-09-17 17:23:53.938 +0000 ==
+   399	Packet received at forwarding stage, tag 44187, type ATOMIC
+   400	Packet info: len 1289 port 17 interface 18 vsys 1
+   401	  wqe index 10959 packet 0x0xc001f30c80, HA: 0
+   402	Packet decoded dump:
+   403	L2:     00:50:56:b1:3d:71->00:50:56:b1:be:96, type 0x0800
+   404	IP:     192.168.50.10->192.168.1.20, protocol 6
+   405	        version 4, ihl 5, tos 0x00, len 1275,
+   406	        id 16535, frag_off 0x0000, ttl 64, checksum 63360(0x80f7)
+   407	TCP:    sport 80, dport 12367, seq 2648883807, ack 3471168026,
+   408	        reserved 0, offset 5, window 1024, checksum 46624,
+   409	        flags 0x1800 ( ACK PSH), urgent data 0, l4 data len 1235
+   410	TCP option:
+   411	Forwarding lookup, ingress interface 18
+   412	L3 mode, virtual-router 1
+   413	Route lookup in virtual-router 1, IP 192.168.1.20
+   414	Route found, interface ethernet1/2, zone 6
+   415	Resolve ARP for IP 192.168.1.20 on interface ethernet1/2
+   416	ARP entry found on interface 17
+   417	Transmit packet on port 17
+   418	
+   419	
+   420	== 2021-09-17 17:23:53.938 +0000 ==
+   421	Packet received at forwarding stage, tag 44187, type ATOMIC
+   422	Packet info: len 54 port 17 interface 18 vsys 1
+   423	  wqe index 11641 packet 0x0xc00199c680, HA: 0
+   424	Packet decoded dump:
+   425	L2:     00:50:56:b1:3d:71->00:50:56:b1:be:96, type 0x0800
+   426	IP:     192.168.50.10->192.168.1.20, protocol 6
+   427	        version 4, ihl 5, tos 0x00, len 40,
+   428	        id 40794, frag_off 0x0000, ttl 64, checksum 1831(0x2707)
+   429	TCP:    sport 80, dport 12367, seq 2648885042, ack 3471168026,
+   430	        reserved 0, offset 5, window 1024, checksum 49327,
+   431	        flags 0x1100 ( ACK FIN), urgent data 0, l4 data len 0
+   432	TCP option:
+   433	Forwarding lookup, ingress interface 18
+   434	L3 mode, virtual-router 1
+   435	Route lookup in virtual-router 1, IP 192.168.1.20
+   436	Route found, interface ethernet1/2, zone 6
+   437	Resolve ARP for IP 192.168.1.20 on interface ethernet1/2
+   438	ARP entry found on interface 17
+   439	Transmit packet on port 17
+   440	
+   441	
+   442	== 2021-09-17 17:23:53.938 +0000 ==
+   443	Packet received at ingress stage, tag 0, type ORDERED
+   444	Packet info: len 60 port 17 interface 17 vsys 1
+   445	  wqe index 11217 packet 0x0xc0035c4b40, HA: 0
+   446	Packet decoded dump:
+   447	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+   448	IP:     192.168.1.20->192.168.50.10, protocol 6
+   449	        version 4, ihl 5, tos 0x00, len 40,
+   450	        id 18449, frag_off 0x4000, ttl 128, checksum 20478(0xfe4f)
+   451	TCP:    sport 12367, dport 80, seq 3471168287, ack 2648885043,
+   452	        reserved 0, offset 5, window 1019, checksum 49071,
+   453	        flags 0x1000 ( ACK), urgent data 0, l4 data len 0
+   454	TCP option:
+   455	Flow lookup, key word0 0x600060050304f word1 0
+   456	Flow 88374 found, state 2, HA 0
+   457	Active flow, enqueue to fastpath process, type 0
+   458	
+   459	
+   460	== 2021-09-17 17:23:53.938 +0000 ==
+   461	Packet received at fastpath stage, tag 44187, type ATOMIC
+   462	Packet info: len 60 port 17 interface 17 vsys 1
+   463	  wqe index 11217 packet 0x0xc0035c4b40, HA: 0
+   464	Packet decoded dump:
+   465	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+   466	IP:     192.168.1.20->192.168.50.10, protocol 6
+   467	        version 4, ihl 5, tos 0x00, len 40,
+   468	        id 18449, frag_off 0x4000, ttl 128, checksum 20478(0xfe4f)
+   469	TCP:    sport 12367, dport 80, seq 3471168287, ack 2648885043,
+   470	        reserved 0, offset 5, window 1019, checksum 49071,
+   471	        flags 0x1000 ( ACK), urgent data 0, l4 data len 0
+   472	TCP option:
+   473	Flow fastpath, session 44187
+   474	IP checksum valid
+   475	FIN proxy proc ACK 2648885043, first seq 2648883807
+   476	Packet dropped: FIN proxy enabled. tcb state 5
+   477	
+   478	
+   479	== 2021-09-17 17:23:53.938 +0000 ==
+   480	Packet received at ingress stage, tag 0, type ORDERED
+   481	Packet info: len 60 port 17 interface 17 vsys 1
+   482	  wqe index 11570 packet 0x0xc00588e1c0, HA: 0
+   483	Packet decoded dump:
+   484	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+   485	IP:     192.168.1.20->192.168.50.10, protocol 6
+   486	        version 4, ihl 5, tos 0x00, len 40,
+   487	        id 18450, frag_off 0x4000, ttl 128, checksum 20222(0xfe4e)
+   488	TCP:    sport 12367, dport 80, seq 3471168287, ack 2648885043,
+   489	        reserved 0, offset 5, window 1019, checksum 49070,
+   490	        flags 0x1100 ( ACK FIN), urgent data 0, l4 data len 0
+   491	TCP option:
+   492	Flow lookup, key word0 0x600060050304f word1 0
+   493	Flow 88374 found, state 2, HA 0
+   494	Active flow, enqueue to fastpath process, type 0
+   495	
+   496	
+   497	== 2021-09-17 17:23:53.938 +0000 ==
+   498	Packet received at fastpath stage, tag 44187, type ATOMIC
+   499	Packet info: len 60 port 17 interface 17 vsys 1
+   500	  wqe index 11570 packet 0x0xc00588e1c0, HA: 0
+   501	Packet decoded dump:
+   502	L2:     00:50:56:b1:be:96->00:50:56:b1:3d:71, type 0x0800
+   503	IP:     192.168.1.20->192.168.50.10, protocol 6
+   504	        version 4, ihl 5, tos 0x00, len 40,
+   505	        id 18450, frag_off 0x4000, ttl 128, checksum 20222(0xfe4e)
+   506	TCP:    sport 12367, dport 80, seq 3471168287, ack 2648885043,
+   507	        reserved 0, offset 5, window 1019, checksum 49070,
+   508	        flags 0x1100 ( ACK FIN), urgent data 0, l4 data len 0
+   509	TCP option:
+   510	Flow fastpath, session 44187
+   511	IP checksum valid
+   512	All pkts in fin q have been freed.
+   513	FIN received and our FIN is acked.
+   514	Packet dropped: FIN proxy enabled. tcb state 6
+   515	
+   516	
+   517	== 2021-09-17 17:23:53.938 +0000 ==
+   518	Packet received at forwarding stage, tag 44187, type ATOMIC
+   519	Packet info: len 54 port 17 interface 17 vsys 1
+   520	  wqe index 11217 packet 0x0xc0024bfac0, HA: 0
+   521	Packet decoded dump:
+   522	L2:     00:50:56:b1:3d:71->00:50:56:b1:be:96, type 0x0800
+   523	IP:     192.168.50.10->192.168.1.20, protocol 6
+   524	        version 4, ihl 5, tos 0x00, len 40,
+   525	        id 18450, frag_off 0x4000, ttl 64, checksum 20286(0x3e4f)
+   526	TCP:    sport 80, dport 12367, seq 2648885043, ack 3471168288,
+   527	        reserved 0, offset 5, window 4095, checksum 45994,
+   528	        flags 0x1000 ( ACK), urgent data 0, l4 data len 0
+   529	TCP option:
+   530	Forwarding lookup, ingress interface 17
+   531	L3 mode, virtual-router 1
+   532	Route lookup in virtual-router 1, IP 192.168.1.20
+   533	Route found, interface ethernet1/2, zone 6
+   534	Resolve ARP for IP 192.168.1.20 on interface ethernet1/2
+   535	ARP entry found on interface 17
+   536	Transmit packet on port 17

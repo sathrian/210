@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Clear Logs All Devices
+Comment=Clears logs for firewalls and Panorama
+Exec=/home/lab-user/Desktop/Lab-Files/EDU-220/clearlogs-all.sh
+Icon=activity-log-manager
+Path=/home/lab-user/Desktop/Lab-Files/EDU-220/
+Terminal=true
+StartupNotify=false

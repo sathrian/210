@@ -1,0 +1,702 @@
+<?xml version="1.0"?>
+<config urldb="paloaltonetworks" version="10.1.0" detail-version="10.1.0">
+  <mgt-config>
+    <devices>
+      <entry name="007051000055975"/>
+      <entry name="007051000055978"/>
+    </devices>
+    <users>
+      <entry name="admin">
+        <phash>$1$lheldkda$vOnq6.mdvpRUlPUpL5VkZ0</phash>
+        <permissions>
+          <role-based>
+            <superuser>yes</superuser>
+          </role-based>
+        </permissions>
+      </entry>
+    </users>
+  </mgt-config>
+  <shared/>
+  <devices>
+    <entry name="localhost.localdomain">
+      <deviceconfig>
+        <system>
+          <ip-address>192.168.1.252</ip-address>
+          <netmask>255.255.255.0</netmask>
+          <update-server>updates.paloaltonetworks.com</update-server>
+          <update-schedule>
+            <anti-virus>
+              <recurring>
+                <weekly>
+                  <at>01:00</at>
+                  <day-of-week>sunday</day-of-week>
+                  <action>download-and-install</action>
+                </weekly>
+              </recurring>
+            </anti-virus>
+            <threats>
+              <recurring>
+                <weekly>
+                  <at>02:00</at>
+                  <day-of-week>sunday</day-of-week>
+                  <action>download-and-install</action>
+                </weekly>
+              </recurring>
+            </threats>
+          </update-schedule>
+          <timezone>UTC</timezone>
+          <service>
+            <disable-telnet>yes</disable-telnet>
+            <disable-http>yes</disable-http>
+            <disable-snmp>no</disable-snmp>
+          </service>
+          <hostname>panorama</hostname>
+          <default-gateway>192.168.1.10</default-gateway>
+          <dns-setting>
+            <servers>
+              <primary>192.168.50.53</primary>
+              <secondary>8.8.8.8</secondary>
+            </servers>
+          </dns-setting>
+          <geo-location>
+            <latitude>41.00</latitude>
+            <longitude>87.00</longitude>
+          </geo-location>
+          <device-telemetry>
+            <device-health-performance>yes</device-health-performance>
+            <product-usage>yes</product-usage>
+            <threat-prevention>yes</threat-prevention>
+          </device-telemetry>
+          <locale>en</locale>
+          <ntp-servers>
+            <primary-ntp-server>
+              <ntp-server-address>pool.ntp.org</ntp-server-address>
+              <authentication-type>
+                <none/>
+              </authentication-type>
+            </primary-ntp-server>
+            <secondary-ntp-server>
+              <ntp-server-address>time-a-g.nist.gov</ntp-server-address>
+              <authentication-type>
+                <none/>
+              </authentication-type>
+            </secondary-ntp-server>
+          </ntp-servers>
+          <permitted-ip>
+            <entry name="192.168.0.0/16">
+              <description>Management network.</description>
+            </entry>
+          </permitted-ip>
+          <domain>panw.lab</domain>
+          <login-banner>*** This is Panorama ***</login-banner>
+          <config-bundle-export-schedule>
+            <entry name="Daily-Export-SCP">
+              <protocol>
+                <scp>
+                  <hostname>192.168.50.150</hostname>
+                  <port>22</port>
+                  <path>/home/paloalto42/</path>
+                  <username>paloalto42</username>
+                  <password>-AQ==+sQEuEum5L7QmagjJNYOSCk7c4U=OySxkiL6gZ7X7tTnpok/MQ==</password>
+                </scp>
+              </protocol>
+              <start-time>01:30</start-time>
+              <description>Panorama and firewall configurations</description>
+              <enable>yes</enable>
+            </entry>
+          </config-bundle-export-schedule>
+          <deployment-update-schedule>
+            <entry name="Weekly-App-and-Threat-Updates">
+              <app-and-threat>
+                <recurring>
+                  <weekly>
+                    <action>
+                      <download-and-install>
+                        <devices>
+                          <member>007051000055978</member>
+                          <member>007051000055975</member>
+                        </devices>
+                      </download-and-install>
+                    </action>
+                    <at>02:30</at>
+                    <day-of-week>sunday</day-of-week>
+                  </weekly>
+                </recurring>
+              </app-and-threat>
+              <download-source>
+                <update-server/>
+              </download-source>
+            </entry>
+            <entry name="Weekly-AV-Update">
+              <anti-virus>
+                <recurring>
+                  <weekly>
+                    <action>
+                      <download-and-install>
+                        <devices>
+                          <member>007051000055978</member>
+                          <member>007051000055975</member>
+                        </devices>
+                      </download-and-install>
+                    </action>
+                    <at>02:45</at>
+                    <day-of-week>sunday</day-of-week>
+                  </weekly>
+                </recurring>
+              </anti-virus>
+              <download-source>
+                <update-server/>
+              </download-source>
+            </entry>
+          </deployment-update-schedule>
+        </system>
+        <setting>
+          <management>
+            <storage-partition>
+              <internal/>
+            </storage-partition>
+            <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
+            <idle-timeout>0</idle-timeout>
+          </management>
+        </setting>
+      </deviceconfig>
+      <template>
+        <entry name="Global-Settings">
+          <description>Network - Interface, Zones, Virtual Router
+Device - Login Banner, Domain, Panorama Servers, Log Settings</description>
+          <settings>
+            <default-vsys>vsys1</default-vsys>
+          </settings>
+          <config>
+            <devices>
+              <entry name="localhost.localdomain">
+                <vsys>
+                  <entry name="vsys1">
+                    <import>
+                      <network>
+                        <interface>
+                          <member>ethernet1/1</member>
+                          <member>ethernet1/2</member>
+                          <member>ethernet1/3</member>
+                        </interface>
+                      </network>
+                    </import>
+                    <zone>
+                      <entry name="Internet">
+                        <network>
+                          <layer3>
+                            <member>ethernet1/1</member>
+                          </layer3>
+                        </network>
+                      </entry>
+                      <entry name="Users_Net">
+                        <network>
+                          <layer3>
+                            <member>ethernet1/2</member>
+                          </layer3>
+                        </network>
+                        <enable-user-identification>yes</enable-user-identification>
+                      </entry>
+                      <entry name="Extranet">
+                        <network>
+                          <layer3>
+                            <member>ethernet1/3</member>
+                          </layer3>
+                        </network>
+                        <enable-user-identification>yes</enable-user-identification>
+                      </entry>
+                    </zone>
+                  </entry>
+                </vsys>
+                <deviceconfig>
+                  <system>
+                    <domain>panw.lab</domain>
+                    <login-banner>Authorized access only.</login-banner>
+                    <panorama>
+                      <local-panorama>
+                        <panorama-server>192.168.1.252</panorama-server>
+                      </local-panorama>
+                    </panorama>
+                    <permitted-ip>
+                      <entry name="192.168.0.0/16">
+                        <description>Management network hosts</description>
+                      </entry>
+                    </permitted-ip>
+                    <type>
+                      <static/>
+                    </type>
+                    <default-gateway>192.168.1.1</default-gateway>
+                  </system>
+                </deviceconfig>
+                <network>
+                  <profiles>
+                    <interface-management-profile>
+                      <entry name="Allow-ping">
+                        <ping>yes</ping>
+                      </entry>
+                      <entry name="Allow-management">
+                        <http>no</http>
+                        <https>yes</https>
+                        <ssh>yes</ssh>
+                        <snmp>yes</snmp>
+                        <ping>yes</ping>
+                        <response-pages>yes</response-pages>
+                      </entry>
+                    </interface-management-profile>
+                  </profiles>
+                  <interface>
+                    <ethernet>
+                      <entry name="ethernet1/1">
+                        <layer3>
+                          <ndp-proxy>
+                            <enabled>no</enabled>
+                          </ndp-proxy>
+                          <sdwan-link-settings>
+                            <upstream-nat>
+                              <enable>no</enable>
+                              <static-ip/>
+                            </upstream-nat>
+                            <enable>no</enable>
+                          </sdwan-link-settings>
+                          <ip>
+                            <entry name="$Internet-Interface"/>
+                          </ip>
+                          <interface-management-profile>Allow-ping</interface-management-profile>
+                          <lldp>
+                            <enable>no</enable>
+                          </lldp>
+                        </layer3>
+                        <comment>Internet interface</comment>
+                      </entry>
+                      <entry name="ethernet1/2">
+                        <layer3>
+                          <ndp-proxy>
+                            <enabled>no</enabled>
+                          </ndp-proxy>
+                          <sdwan-link-settings>
+                            <upstream-nat>
+                              <enable>no</enable>
+                              <static-ip/>
+                            </upstream-nat>
+                            <enable>no</enable>
+                          </sdwan-link-settings>
+                          <ip>
+                            <entry name="$User_Net-Interface"/>
+                          </ip>
+                          <interface-management-profile>Allow-management</interface-management-profile>
+                          <lldp>
+                            <enable>no</enable>
+                          </lldp>
+                        </layer3>
+                        <comment>User-Net interface</comment>
+                      </entry>
+                      <entry name="ethernet1/3">
+                        <layer3>
+                          <ndp-proxy>
+                            <enabled>no</enabled>
+                          </ndp-proxy>
+                          <sdwan-link-settings>
+                            <upstream-nat>
+                              <enable>no</enable>
+                              <static-ip/>
+                            </upstream-nat>
+                            <enable>no</enable>
+                          </sdwan-link-settings>
+                          <ip>
+                            <entry name="$Extranet-Interface"/>
+                          </ip>
+                          <interface-management-profile>Allow-management</interface-management-profile>
+                          <lldp>
+                            <enable>no</enable>
+                          </lldp>
+                        </layer3>
+                        <comment>Extranet interface</comment>
+                      </entry>
+                    </ethernet>
+                  </interface>
+                  <virtual-router>
+                    <entry name="VR-1">
+                      <ecmp>
+                        <algorithm>
+                          <ip-modulo/>
+                        </algorithm>
+                      </ecmp>
+                      <protocol>
+                        <bgp>
+                          <routing-options>
+                            <graceful-restart>
+                              <enable>yes</enable>
+                            </graceful-restart>
+                          </routing-options>
+                          <enable>no</enable>
+                        </bgp>
+                        <rip>
+                          <enable>no</enable>
+                        </rip>
+                        <ospf>
+                          <enable>no</enable>
+                        </ospf>
+                        <ospfv3>
+                          <enable>no</enable>
+                        </ospfv3>
+                      </protocol>
+                      <routing-table>
+                        <ip>
+                          <static-route>
+                            <entry name="Firewall-Default-Gateway">
+                              <path-monitor>
+                                <enable>no</enable>
+                                <failure-condition>any</failure-condition>
+                                <hold-time>2</hold-time>
+                              </path-monitor>
+                              <nexthop>
+                                <ip-address>203.0.113.1</ip-address>
+                              </nexthop>
+                              <bfd>
+                                <profile>None</profile>
+                              </bfd>
+                              <interface>ethernet1/1</interface>
+                              <metric>10</metric>
+                              <destination>0.0.0.0/0</destination>
+                              <route-table>
+                                <unicast/>
+                              </route-table>
+                            </entry>
+                          </static-route>
+                        </ip>
+                      </routing-table>
+                      <interface>
+                        <member>ethernet1/1</member>
+                        <member>ethernet1/2</member>
+                        <member>ethernet1/3</member>
+                      </interface>
+                    </entry>
+                  </virtual-router>
+                </network>
+              </entry>
+            </devices>
+            <shared>
+              <log-settings>
+                <system>
+                  <match-list>
+                    <entry name="Firewall_System_Logs_to_Panorama">
+                      <filter>All Logs</filter>
+                      <description>Sends all firewall system log entries to Panorama</description>
+                      <send-to-panorama>yes</send-to-panorama>
+                    </entry>
+                  </match-list>
+                </system>
+                <config>
+                  <match-list>
+                    <entry name="Firewall_Configuration_Logs_to_Panorama">
+                      <filter>All Logs</filter>
+                      <description>Sends all firewall configuration log entries to Panorama</description>
+                      <send-to-panorama>yes</send-to-panorama>
+                    </entry>
+                  </match-list>
+                </config>
+              </log-settings>
+            </shared>
+            <mgt-config>
+              <users>
+                <entry name="globaladmin">
+                  <permissions>
+                    <role-based>
+                      <superuser>yes</superuser>
+                    </role-based>
+                  </permissions>
+                  <phash>$1$mwivmjki$suiDuSVnhGwosEYBwUmQ8/</phash>
+                </entry>
+              </users>
+            </mgt-config>
+          </config>
+          <variable>
+            <entry name="$Internet-Interface">
+              <type>
+                <ip-netmask>1.1.1.1/24</ip-netmask>
+              </type>
+              <description>Internet interface</description>
+            </entry>
+            <entry name="$User_Net-Interface">
+              <type>
+                <ip-netmask>2.2.2.2/24</ip-netmask>
+              </type>
+              <description>User network interface</description>
+            </entry>
+            <entry name="$Extranet-Interface">
+              <type>
+                <ip-netmask>3.3.3.3/24</ip-netmask>
+              </type>
+              <description>Extranet interface</description>
+            </entry>
+          </variable>
+        </entry>
+        <entry name="Region-Americas">
+          <description>Browser banner and server profiles</description>
+          <settings>
+            <default-vsys>vsys1</default-vsys>
+          </settings>
+          <config>
+            <devices>
+              <entry name="localhost.localdomain">
+                <vsys>
+                  <entry name="vsys1"/>
+                </vsys>
+                <deviceconfig>
+                  <system>
+                    <motd-and-banner>
+                      <motd-enable>no</motd-enable>
+                      <banner-header>This is an Americas firewall.</banner-header>
+                      <banner-header-color>color1</banner-header-color>
+                    </motd-and-banner>
+                  </system>
+                </deviceconfig>
+              </entry>
+            </devices>
+            <shared>
+              <log-settings>
+                <syslog>
+                  <entry name="Syslog_Servers">
+                    <server>
+                      <entry name="US-Syslog-1">
+                        <transport>UDP</transport>
+                        <port>514</port>
+                        <format>BSD</format>
+                        <server>192.168.50.55</server>
+                        <facility>LOG_USER</facility>
+                      </entry>
+                    </server>
+                  </entry>
+                </syslog>
+                <email>
+                  <entry name="Email_Servers">
+                    <server>
+                      <entry name="US-Mail-1">
+                        <display-name>Chicago Firewall</display-name>
+                        <gateway>192.168.50.150</gateway>
+                        <protocol>SMTP</protocol>
+                        <port>25</port>
+                        <tls-version>1.2</tls-version>
+                        <from>chicago-fw@panw.lab</from>
+                        <to>paloalto42@panw.lab</to>
+                      </entry>
+                    </server>
+                  </entry>
+                </email>
+              </log-settings>
+            </shared>
+          </config>
+        </entry>
+        <entry name="Region-Europe">
+          <description>Browser banner and server profiles</description>
+          <settings>
+            <default-vsys>vsys1</default-vsys>
+          </settings>
+          <config>
+            <devices>
+              <entry name="localhost.localdomain">
+                <vsys>
+                  <entry name="vsys1"/>
+                </vsys>
+                <deviceconfig>
+                  <system>
+                    <motd-and-banner>
+                      <motd-enable>no</motd-enable>
+                      <banner-header>This is a Europe firewall.</banner-header>
+                      <banner-header-color>color6</banner-header-color>
+                    </motd-and-banner>
+                  </system>
+                </deviceconfig>
+              </entry>
+            </devices>
+            <shared>
+              <log-settings>
+                <syslog>
+                  <entry name="Syslog_Servers">
+                    <server>
+                      <entry name="EU-Syslog-1">
+                        <transport>UDP</transport>
+                        <port>514</port>
+                        <format>BSD</format>
+                        <server>192.168.50.55</server>
+                        <facility>LOG_USER</facility>
+                      </entry>
+                    </server>
+                  </entry>
+                </syslog>
+                <email>
+                  <entry name="Email_Servers">
+                    <server>
+                      <entry name="EU-Mail-1">
+                        <display-name>Berlin Firewall</display-name>
+                        <gateway>192.168.50.150</gateway>
+                        <protocol>SMTP</protocol>
+                        <port>25</port>
+                        <tls-version>1.2</tls-version>
+                        <from>berlin-fw@panw.lab</from>
+                        <to>paloalto42@panw.lab</to>
+                      </entry>
+                    </server>
+                  </entry>
+                </email>
+              </log-settings>
+            </shared>
+          </config>
+        </entry>
+      </template>
+      <template-stack>
+        <entry name="Germany-Stack">
+          <user-group-source>
+            <master-device/>
+          </user-group-source>
+          <templates>
+            <member>Global-Settings</member>
+            <member>Region-Europe</member>
+          </templates>
+          <description>Contains settings for firewalls in Germany.</description>
+          <devices>
+            <entry name="007051000055978">
+              <variable>
+                <entry name="$User_Net-Interface">
+                  <type>
+                    <ip-netmask>192.168.1.5/24</ip-netmask>
+                  </type>
+                </entry>
+                <entry name="$Extranet-Interface">
+                  <type>
+                    <ip-netmask>192.168.50.5/24</ip-netmask>
+                  </type>
+                </entry>
+                <entry name="$Internet-Interface">
+                  <type>
+                    <ip-netmask>203.0.113.25/24</ip-netmask>
+                  </type>
+                </entry>
+              </variable>
+            </entry>
+          </devices>
+        </entry>
+        <entry name="US-Stack">
+          <user-group-source>
+            <master-device/>
+          </user-group-source>
+          <templates>
+            <member>Global-Settings</member>
+            <member>Region-Americas</member>
+          </templates>
+          <description>Contains settings for firewalls in US.</description>
+          <devices>
+            <entry name="007051000055975">
+              <variable>
+                <entry name="$User_Net-Interface">
+                  <type>
+                    <ip-netmask>192.168.1.1/24</ip-netmask>
+                  </type>
+                </entry>
+                <entry name="$Extranet-Interface">
+                  <type>
+                    <ip-netmask>192.168.50.1/24</ip-netmask>
+                  </type>
+                </entry>
+                <entry name="$Internet-Interface">
+                  <type>
+                    <ip-netmask>203.0.113.20/24</ip-netmask>
+                  </type>
+                </entry>
+              </variable>
+            </entry>
+          </devices>
+        </entry>
+      </template-stack>
+    </entry>
+  </devices>
+  <readonly>
+    <max-internal-id>24</max-internal-id>
+    <devices>
+      <entry name="localhost.localdomain">
+        <template>
+          <entry name="Global-Settings">
+            <id>11</id>
+            <config>
+              <devices>
+                <entry name="localhost.localdomain">
+                  <vsys>
+                    <entry name="vsys1">
+                      <zone>
+                        <entry name="Internet">
+                          <id>12</id>
+                        </entry>
+                        <entry name="Users_Net">
+                          <id>13</id>
+                        </entry>
+                        <entry name="Extranet">
+                          <id>14</id>
+                        </entry>
+                      </zone>
+                    </entry>
+                  </vsys>
+                </entry>
+              </devices>
+            </config>
+          </entry>
+          <entry name="Region-Americas">
+            <id>15</id>
+          </entry>
+          <entry name="Region-Europe">
+            <id>16</id>
+          </entry>
+        </template>
+        <template-stack>
+          <entry name="Germany-Stack">
+            <id>17</id>
+            <config>
+              <devices>
+                <entry name="localhost.localdomain">
+                  <vsys>
+                    <entry name="vsys1">
+                      <zone>
+                        <entry name="Internet">
+                          <id>19</id>
+                        </entry>
+                        <entry name="Users_Net">
+                          <id>20</id>
+                        </entry>
+                        <entry name="Extranet">
+                          <id>21</id>
+                        </entry>
+                      </zone>
+                    </entry>
+                  </vsys>
+                </entry>
+              </devices>
+            </config>
+          </entry>
+          <entry name="US-Stack">
+            <id>18</id>
+            <config>
+              <devices>
+                <entry name="localhost.localdomain">
+                  <vsys>
+                    <entry name="vsys1">
+                      <zone>
+                        <entry name="Internet">
+                          <id>22</id>
+                        </entry>
+                        <entry name="Users_Net">
+                          <id>23</id>
+                        </entry>
+                        <entry name="Extranet">
+                          <id>24</id>
+                        </entry>
+                      </zone>
+                    </entry>
+                  </vsys>
+                </entry>
+              </devices>
+            </config>
+          </entry>
+        </template-stack>
+      </entry>
+    </devices>
+  </readonly>
+</config>

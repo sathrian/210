@@ -1,0 +1,24 @@
+<uid-message>
+  <type>update</type>
+  <payload>
+    <login>
+      <entry name="berlin\BMasterson" ip="192.168.1.32"/>
+      <entry name="berlin\BKid" ip="192.168.1.33"/>
+      <entry name="berlin\BStarr" ip="192.168.1.34"/>
+      <entry name="berlin\BBart" ip="192.168.1.35"/>
+      <entry name="berlin\BBill" ip="192.168.1.36"/>
+      <entry name="berlin\BCassidy" ip="192.168.1.37"/>
+      <entry name="berlin\CJane" ip="192.168.1.38"/>
+      <entry name="berlin\CHorse" ip="192.168.1.39"/>
+      <entry name="berlin\DHoliday" ip="192.168.1.40"/>
+      <entry name="berlin\GRonimo" ip="192.168.1.41"/>
+      <entry name="berlin\JJames" ip="192.168.1.42"/>
+      <entry name="berlin\JRingo" ip="192.168.1.43"/>
+      <entry name="berlin\PGarrett" ip="192.168.1.44"/>
+      <entry name="berlin\SBull" ip="192.168.1.45"/>
+      <entry name="berlin\SKid" ip="192.168.1.46"/>
+      <entry name="berlin\WBHickock" ip="192.168.1.47"/>
+    </login>
+  </payload>
+</uid-message>
+

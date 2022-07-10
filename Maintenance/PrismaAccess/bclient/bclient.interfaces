@@ -1,0 +1,13 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+
+auto ens160
+iface ens160 inet static
+	address 172.16.18.21
+	netmask 255.255.255.0
+	network 172.16.18.0
+	broadcast 172.16.18.255
+	gateway 172.16.18.1
+	dns-nameservers 172.16.18.21, 4.2.2.2
+#	dns-search panw.lab

@@ -1,0 +1,400 @@
+Mod 2 - Adding Firewalls
+EDU-220 Panorama
+
+<p><b>Which option in Panorama can automate the process of pushing new virus, threat, and application signature to FW's?</b></p>
+<p></p>
+
+<p><b>A) Content Update Activation
+<p><b>B) Signature Updates
+<p><b>C) Dynamic Update Schedules
+<p><b>D) Software Updates
+<p></p>
+<p>Enter A, B, C or D  in the Flag field below and then click the Submit button.</p>
+
+
+Mod 3 - Templates
+EDU-220 Panorama
+
+<p><b>Can you use the same template in different template stacks?</b></p>
+<p></p>
+
+no
+yes, if there are no other templates in the stack
+yes, regardless of other templates in the stack
+yes, as long as there are no conflicting values in other templates within
+
+Mod 3 - Templates
+EDU-220 Panorama
+
+<p><b>When adding configuration elements to templates, which action should you always take?</b></p>
+<p></p>
+
+Select the appropriate template from the drop-down list.
+Select the correct firewalls to receive changes.
+Select the correct template stack from the drop-down list.
+Clone the template before making changes.
+
+
+Mod 3 - Templates
+EDU-220 Panorama
+
+<p><b>Which two configuration elements can be configured for managed firewalls by using templates in Panorama?</b></p>
+<p></p>
+
+ACC
+Device
+Network
+Policies
+
+
+Mod 3 - Templates
+EDU-220 Panorama
+
+<p><b>How many stacks can a managed firewall be assigned to?</b></p>
+<p></p>
+
+1
+2
+3
+unlimited
+
+Mod 3 - Templates
+EDU-220 Panorama
+
+<p><b>If two templates in the same template stack have different values for the same setting, what will Panorama do?</b></p>
+<p></p>
+
+Generate an error at commit.
+Ignore the value in both templates.
+Use the value from the lowest template in the stack.
+Use the value from the highest template in the stack.
+
+Mod 4 - Device Groups
+EDU-220 Panorama
+
+<p><b>When you create the first device group in Panorama, which two tabs are added to the user interface?</b></p>
+<p></p>
+
+Policies
+Network
+Device
+Objects
+
+Mod 4 - Device Groups
+EDU-220 Panorama
+
+<p><b>Which device group is automatically created and cannot be deleted?</b></p>
+<p></p>
+
+Shared Group
+Default Group
+Inheritance Group
+Template Group
+
+Mod 4 - Device Groups
+EDU-220 Panorama
+
+<p><b>What is the maximum number of device groups in Panorama?</b></p>
+<p></p>
+
+512
+1024
+4096
+no limit
+
+Mod 4 - Device Groups
+EDU-220 Panorama
+
+<p><b>Which option should you select to prevent modifications to an object within descendant device groups?</b></p>
+<p></p>
+
+Disable override
+Disable Shared Group
+Disable inheritance
+Disable virtual systems
+
+Mod 4 - Device Groups
+EDU-220 Panorama
+
+<p><b>When creating an object in a device group, which action should you always perform?</b></p>
+<p></p>
+
+Select the correct object from the available drop-down list
+Select the correct device group from the available drop-down list
+Select the correct ancestor from the available drop-down list
+Select the Shared Group from the available drop-down list
+
+
+Mod 5 - Log Collection and Forwarding
+EDU-220 Panorama
+
+<p><b>Which statement about forwarding firewall log file events to Panorama is true?</b></p>
+<p></p>
+
+Firewalls can forward log file events only to Panorama
+Firewalls can forward log file events to Panorama and to other systems
+Only Panorama can receive log file events from managed firewalls
+Panorama cannot forward firewall log file events to other systems
+
+Mod 5 - Log Collection and Forwarding
+EDU-220 Panorama
+
+<p><b>Which statement about log file forwarding from Panorama is true?</b></p>
+<p></p>
+
+Panorama can forward log file events from firewalls to other system
+Panorama cannot forward log file events from firewalls to other systems
+Managed FWs must be configured to forward log events to multiple targets
+Managed FWs can send log file events to only one target
+
+Mod 5 - Log Collection and Forwarding
+EDU-220 Panorama
+
+<p><b>Which statement about firewall log event forwarding is true?</b></p>
+<p></p>
+
+Firewalls can be configured only to forward all log file event types
+FWs can be configured to forward different log events to different targets
+Firewalls can be configured only to forward all log events to Panorama
+FWs can be configured only to forward different log file events to Panorama
+
+Mod 5 - Log Collection and Forwarding
+EDU-220 Panorama
+
+<p><b>When defining a Log Forwarding Profile in Panorama, which one of the following elements is required in the profile?</b></p>
+<p></p>
+
+Severity
+Log Type
+Date Generated
+Security Policy Rule
+
+Mod 5 - Log Collection and Forwarding
+EDU-220 Panorama
+
+<p><b>Which one of the following statements is true about Panorama system log files?</b></p>
+<p></p>
+
+System logs can be forwarded to the same Server Profiles as managed FWs
+System logs can not be forwarded to the same Server Profiles as managed FWs
+System logs cannot be forwarded to external systems
+System logs are stored only in Cortex Data Lake
+
+Mod 6 - Using Panorama Logs
+EDU-220 Panorama
+
+<p><b>Which one of the following statements about filters is not true?</b></p>
+<p></p>
+
+You can create a filter by clicking a hyperlink within the filter table
+You can manually alter the text within a filter to change it
+You can use the Filter Builder to create filters
+Filters are pre-configured by Palo Alto Networks and cannot be modified
+
+Mod 6 - Using Panorama Logs
+EDU-220 Panorama
+
+<p><b> True or false
+T/F? Filter syntax is not case-sensitive</b></p>
+<p></p>
+
+True
+False
+
+Mod 6 - Using Panorama Logs
+EDU-220 Panorama
+
+<p><b>When you create a filter with multiple criteria by clicking hyperlinks in a table, how does Pano combine the criteria?</b></p>
+<p></p>
+
+withan “and” statement by default
+with an “or” statement by default
+withan “eq”statement by default
+withan “neq”statement by default
+
+Mod 6 - Using Panorama Logs
+EDU-220 Panorama
+
+<p><b>What is the correct syntax to display log file entries for both web-browsing and ssl applications?</b></p>
+<p></p>
+
+(app eq web-browsing) or (app eq ssl)
+(app eq web-browsing) and (app eq ssl)
+(app eq web-browsing) - (app eq ssl)
+(app eq web-browsing) + (app eq ssl)
+
+Mod 6 - Using Panorama Logs
+EDU-220 Panorama
+
+<p><b>Which format is available when exporting data filtered from Panorama log file tables?</b></p>
+<p></p>
+
+CSV
+PDF
+DOC
+RTF
+
+Mod 7 - Administrative Accounts
+EDU-220 Panorama
+
+<p><b>Which one of the following authentication methods stores usernames and passwords within Panorama itself?</b></p>
+<p></p>
+
+Local Database
+RADIUS
+LDAP
+TACACS+
+
+Mod 7 - Administrative Accounts
+EDU-220 Panorama
+
+<p><b>Which item contains details about a server that Panorama will use when authenticating against an external system?</b></p>
+<p></p>
+
+Server Profile
+Server Authentication
+Authentication Profile
+Authentication Sequence
+
+Mod 7 - Administrative Accounts
+EDU-220 Panorama
+
+<p><b>Which item allows Panorama to check administrator credentials against more than one external authentication system?</b></p>
+<p></p>
+
+Server Profile
+Server Authentication
+Authentication Profile
+Authentication Sequence
+
+Mod 7 - Administrative Accounts
+EDU-220 Panorama
+
+<p><b>Which of the following external authentication systems can provide Panorama with administrator group membership info?</b></p>
+<p></p>
+
+LDAP
+RADIUS
+TACACS+
+Kerberos
+
+Mod 7 - Administrative Accounts
+EDU-220 Panorama
+
+<p><b>Which category of administrator types is available in Panorama by default and does not require customization?</b></p>
+<p></p>
+
+Dynamic
+Custom Panorama Admin
+Default
+Device Group and Template Admin
+
+Mod 8 - Monitoring and Reporting
+EDU-220 Panorama
+
+<p><b>Which of the following are considered local data on Panorama?</b></p>
+<p></p>
+
+data forwarded by managed firewalls through log forwarding to Panorama
+data obtained by Panorama by querying Log Collectors
+data obtained by Panorama by querying managed firewalls
+data obtained by Panorama by querying Cortex Data Lake
+
+Mod 8 - Monitoring and Reporting
+EDU-220 Panorama
+
+<p><b>At what interval do managed firewalls send summary log data to Panorama?</b></p>
+<p></p>
+
+15 minutes
+5 minutes
+60 minutes
+1 minute
+
+Mod 8 - Monitoring and Reporting
+EDU-220 Panorama
+
+<p><b>When viewing the Dashboard, which one of the following can you use to filter the results?</b></p>
+<p></p>
+
+Device Group
+Template
+Template Stack
+Managed Device
+
+Mod 8 - Monitoring and Reporting
+EDU-220 Panorama
+
+<p><b>Which configuration activity instructs a firewall to send summary log data to Panorama?</b></p>
+<p></p>
+
+Configure Log Forwarding Profiles on firewalls to forward traffic to Pano
+Configure a firewall to be managed by Panorama
+Configure a scheduled log export on the firewalls to push data to Panorama
+Configure a Log Forwarding Profile on Panorama
+
+Mod 8 - Monitoring and Reporting
+EDU-220 Panorama
+
+<p><b>When you create a custom Panorama report, which item determines the fields available to include in the report?</b></p>
+<p></p>
+
+Database
+Selected Columns
+Device Group
+Template Stack
+
+Mod 9 - Troubleshooting
+EDU-220 Panorama
+
+<p><b>On Panorama, in which place can you look for details about a communication problem between Pano and a managed firewall?</b></p>
+<p></p>
+
+Check the Panorama Config log for more details.
+Check the Panorama System log for more details.
+Check the Panorama Audit log for more details.
+Check the Panorama Authentication log for more details.
+
+Mod 9 - Troubleshooting
+EDU-220 Panorama
+
+<p><b>On a firewall, in which place can you look for details about a communication problem between Panorama and a firewall?</b></p>
+<p></p>
+
+Check the firewall Config log for more details.
+Check the firewall System log for more details.
+Check the firewall Audit log for more details.
+Check the firewall Authentication log for more details.
+
+Mod 9 - Troubleshooting
+EDU-220 Panorama
+
+<p><b>Which CLI command on Panorama can you use to test connectivity between a firewall and Panorama?</b></p>
+<p></p>
+
+configure
+commit
+ping
+tcpdump
+
+Mod 9 - Troubleshooting
+EDU-220 Panorama
+
+<p><b>What is the correct syntax to ping from Panorama to a firewall with an IP-address of 192.168.1.254?</b></p>
+<p></p>
+
+ping source 192.168.1.254
+ping host 192.168.1.254
+ping 192.168.1.254
+ping destination 192.168.1.254
+
+Mod 9 - Troubleshooting
+EDU-220 Panorama
+
+<p><b>On Panorama, how can you examine traffic between Panorama and a managed firewall?</b></p>
+<p></p>
+
+Run tcpdump on Panorama.
+Run packet capture on Panorama.
+Run show status firewall on Panorama.
+Run view status firewall on Panorama.

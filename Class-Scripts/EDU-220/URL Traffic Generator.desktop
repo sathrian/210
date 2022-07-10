@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=URL Traffic Generator
+Comment=Generates URL Traffic
+Exec=/home/lab-user/Desktop/Lab-Files/EDU-220/a-url-traffic.sh
+Icon=preferences-desktop-locale
+Path=/home/lab-user/Desktop/Lab-Files/EDU-220/
+Terminal=true
+StartupNotify=false

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Log Testing
+Comment=Generates log file entries from firewall
+Exec=/home/lab-user/Desktop/Lab-Files/EDU-220/a-logtesting.sh
+Icon=accessories-dictionary
+Path=/home/lab-user/Desktop/Lab-Files/EDU-220/
+Terminal=true
+StartupNotify=false

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Clear FW-A Logs
+Comment=Clears logs on Firewall-A
+Exec=/home/lab-user/Desktop/Lab-Files/EDU-220/a-clearlogs.sh
+Icon=jxplorer
+Path=/home/lab-user/Desktop/Lab-Files/EDU-220/
+Terminal=true
+StartupNotify=false

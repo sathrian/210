@@ -1,0 +1,4 @@
+variable_name,variable_type,berlin-fw/007051000055978
+$User_Net-Interface,ip-netmask,192.168.1.5/24
+$Extranet-Interface,ip-netmask,192.168.50.5/24
+$Internet-Interface,ip-netmask,203.0.113.25/24

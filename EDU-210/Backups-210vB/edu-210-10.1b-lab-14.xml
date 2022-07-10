@@ -1,0 +1,1945 @@
+<?xml version="1.0"?>
+<config urldb="paloaltonetworks" version="10.1.0" detail-version="10.1.0">
+  <mgt-config>
+    <users>
+      <entry name="admin">
+        <phash>$1$umsniojs$aA4RXUQ6iBvfbt1She2JT1</phash>
+        <permissions>
+          <role-based>
+            <superuser>yes</superuser>
+          </role-based>
+        </permissions>
+      </entry>
+    </users>
+  </mgt-config>
+  <shared>
+    <application/>
+    <application-group/>
+    <service/>
+    <service-group/>
+    <botnet>
+      <configuration>
+        <http>
+          <dynamic-dns>
+            <enabled>yes</enabled>
+            <threshold>5</threshold>
+          </dynamic-dns>
+          <malware-sites>
+            <enabled>yes</enabled>
+            <threshold>5</threshold>
+          </malware-sites>
+          <recent-domains>
+            <enabled>yes</enabled>
+            <threshold>5</threshold>
+          </recent-domains>
+          <ip-domains>
+            <enabled>yes</enabled>
+            <threshold>10</threshold>
+          </ip-domains>
+          <executables-from-unknown-sites>
+            <enabled>yes</enabled>
+            <threshold>5</threshold>
+          </executables-from-unknown-sites>
+        </http>
+        <other-applications>
+          <irc>yes</irc>
+        </other-applications>
+        <unknown-applications>
+          <unknown-tcp>
+            <destinations-per-hour>10</destinations-per-hour>
+            <sessions-per-hour>10</sessions-per-hour>
+            <session-length>
+              <maximum-bytes>100</maximum-bytes>
+              <minimum-bytes>50</minimum-bytes>
+            </session-length>
+          </unknown-tcp>
+          <unknown-udp>
+            <destinations-per-hour>10</destinations-per-hour>
+            <sessions-per-hour>10</sessions-per-hour>
+            <session-length>
+              <maximum-bytes>100</maximum-bytes>
+              <minimum-bytes>50</minimum-bytes>
+            </session-length>
+          </unknown-udp>
+        </unknown-applications>
+      </configuration>
+      <report>
+        <topn>100</topn>
+        <scheduled>yes</scheduled>
+      </report>
+    </botnet>
+    <certificate>
+      <entry name="trusted-cert">
+        <subject-hash>83e474bd</subject-hash>
+        <issuer-hash>83e474bd</issuer-hash>
+        <not-valid-before>Apr 28 13:55:14 2021 GMT</not-valid-before>
+        <issuer>/CN=192.168.1.1</issuer>
+        <not-valid-after>Apr 28 13:55:14 2022 GMT</not-valid-after>
+        <common-name>192.168.1.1</common-name>
+        <expiry-epoch>1651154114</expiry-epoch>
+        <ca>yes</ca>
+        <subject>/CN=192.168.1.1</subject>
+        <public-key>-----BEGIN CERTIFICATE-----
+MIICzDCCAbSgAwIBAgIJAIbZirwbxggaMA0GCSqGSIb3DQEBCwUAMBYxFDASBgNV
+BAMTCzE5Mi4xNjguMS4xMB4XDTIxMDQyODEzNTUxNFoXDTIyMDQyODEzNTUxNFow
+FjEUMBIGA1UEAxMLMTkyLjE2OC4xLjEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+ggEKAoIBAQC7/3qu1lBU0O79KCO2UoJT9DF0Z867rUGjWQi05V35D78Dwj4UW7cl
+4157Sfxj/UU3S10T3zS30ycvmU0O1xcXkJwKzuAAanqwRL65JAj1ObAJEy9ay1do
+c1jYQ+UC3um6FEXJY6wEe1xET7tgbZgK7atUQt6um03Xm/jUe+mMcO4tBm9stIRg
+VgGQ6g1K5QXW9TJHMmDURfZnE9WtoN6kIMiNX1B0JB8xPDm2xVHlDCR/OPG478Bt
+J8QK2mSABWzm57xf9Jww5P3KLBeKHaaCCPTW7HyLA54w535GqQCoMYihbzOkdDv/
+WF+XFWm8PKKlNu5RECQcwQMlEwYI0borAgMBAAGjHTAbMAwGA1UdEwQFMAMBAf8w
+CwYDVR0PBAQDAgIEMA0GCSqGSIb3DQEBCwUAA4IBAQBtcH8SFUIIURyqeQ5mEJo+
+QnJ6koqmDWabTNB4BVfM1gUr7zmrL0s40Egw85o0ceQA08ouDSooGw7xTjhnkAN6
+R8k54p+Og+hyUNAHUSYCCUC7Dj8GLKI18R9BAR2U8ZV3tpLLe828LmWBEPmxg4q7
+wgbrM0W6VApqbHr4+NXEqC3xOsmphH1RHBxo2z4YO31aApfNpTL8s0rkrgJ9oL+E
+m5fnsED1Tv5wlhLCpm8Vr5Q86CYAFufe/p/j6qtW0U3gGQhiGudBm7Jc/bTB6VE8
+zJigc8n/FrxK+Q0iVXvkY4JUfsJ5s7QIr/cdbY93GNvjMbeUoShm/3ocp27Tjq94
+-----END CERTIFICATE-----
+</public-key>
+        <algorithm>RSA</algorithm>
+        <private-key>-AQ==VT8aJhSEodlqiryyV9Fi9xrvkGE=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</private-key>
+      </entry>
+      <entry name="untrusted-cert">
+        <subject-hash>2ec5dd32</subject-hash>
+        <issuer-hash>2ec5dd32</issuer-hash>
+        <not-valid-before>Apr 28 14:17:04 2021 GMT</not-valid-before>
+        <issuer>/CN=DO NOT TRUST</issuer>
+        <not-valid-after>Apr 28 14:17:04 2022 GMT</not-valid-after>
+        <common-name>DO NOT TRUST</common-name>
+        <expiry-epoch>1651155424</expiry-epoch>
+        <ca>yes</ca>
+        <subject>/CN=DO NOT TRUST</subject>
+        <public-key>-----BEGIN CERTIFICATE-----
+MIICzjCCAbagAwIBAgIJAN+P02A+GppmMA0GCSqGSIb3DQEBCwUAMBcxFTATBgNV
+BAMTDERPIE5PVCBUUlVTVDAeFw0yMTA0MjgxNDE3MDRaFw0yMjA0MjgxNDE3MDRa
+MBcxFTATBgNVBAMTDERPIE5PVCBUUlVTVDCCASIwDQYJKoZIhvcNAQEBBQADggEP
+ADCCAQoCggEBAOCPlr3MscRDsK+wHpCZAJTMi6VlxFCWXv0NczHoPtR3FOw/0cW6
+xd2tfYXNBe5eXgKjKg6x+R+YRHmL8iwvSvMl5uskTKQHkDIe7YrJGzB0NLdy2jvr
+E6L0zUY7Oje8XLqhdOOlTFEzVf/oPc844ayCtK9somT/gDdX1hcCacsOBlkBJuCi
+iZOkPepeHME8EmV2Qd3kq1jx3bMiC3t7OjhUILYc5fXVMAdTyYAKhn32Yrwusx5L
+b0h3mb5sEZg6N98LT0Fov04JaYXxJpP2/TkKSRxaFjB3FIpCL/sddcV0XSw9KlfO
+ELqJG7C3WxuDbOA5AmbcZ24SB9F+iucPTf0CAwEAAaMdMBswDAYDVR0TBAUwAwEB
+/zALBgNVHQ8EBAMCAgQwDQYJKoZIhvcNAQELBQADggEBAKzyPUmdLpdiUNHofy2U
+Ojd8GXl2s/BzjWoVxmhKMWqIugfehZ4+z0Cw4CJv3AC5pcmMi94K4fqphfUWRAXj
+hifTI2M3RAXUVYmBUWAAf5JG79DAp+KyZ2ctXSqc/ZW11jz6WO8vPUSwbnl63HNI
+YY+ujGkLMgVKmHdbGgMJiH3s6PBB+VszKMwHBeJScRHsWxYXv6guj8nZQuVu1qW8
+YwAH2w1OK3v92B6vzjxyf4J+hOq9d3FVnYWtTEDmY5x7D1TNkwkXVu22H9w7IUQR
+eXpXnDbs3qseF+QjpD1rjyMUTH660lv0lS2pW0beURwJ21+GNvvrBd51xl2mmefM
+WOw=
+-----END CERTIFICATE-----
+</public-key>
+        <algorithm>RSA</algorithm>
+        <private-key>-AQ==6TSlMOnzDhUxa36PBLO4i2Ub6vc=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</private-key>
+      </entry>
+    </certificate>
+    <ssl-decrypt>
+      <forward-trust-certificate>
+        <rsa>trusted-cert</rsa>
+      </forward-trust-certificate>
+      <forward-untrust-certificate>
+        <rsa>untrusted-cert</rsa>
+      </forward-untrust-certificate>
+    </ssl-decrypt>
+  </shared>
+  <devices>
+    <entry name="localhost.localdomain">
+      <network>
+        <interface>
+          <ethernet>
+            <entry name="ethernet1/1">
+              <layer3>
+                <ndp-proxy>
+                  <enabled>no</enabled>
+                </ndp-proxy>
+                <sdwan-link-settings>
+                  <enable>no</enable>
+                </sdwan-link-settings>
+                <ip>
+                  <entry name="203.0.113.20/24"/>
+                </ip>
+                <lldp>
+                  <enable>no</enable>
+                </lldp>
+                <interface-management-profile>Allow-ping</interface-management-profile>
+              </layer3>
+              <comment>Internet connection</comment>
+            </entry>
+            <entry name="ethernet1/2">
+              <layer3>
+                <ndp-proxy>
+                  <enabled>no</enabled>
+                </ndp-proxy>
+                <sdwan-link-settings>
+                  <enable>no</enable>
+                </sdwan-link-settings>
+                <ip>
+                  <entry name="192.168.1.1/24"/>
+                </ip>
+                <lldp>
+                  <enable>no</enable>
+                </lldp>
+                <interface-management-profile>Allow-mgt</interface-management-profile>
+              </layer3>
+              <comment>Users network connection</comment>
+            </entry>
+            <entry name="ethernet1/3">
+              <layer3>
+                <ndp-proxy>
+                  <enabled>no</enabled>
+                </ndp-proxy>
+                <sdwan-link-settings>
+                  <enable>no</enable>
+                </sdwan-link-settings>
+                <ip>
+                  <entry name="192.168.50.1/24"/>
+                </ip>
+                <lldp>
+                  <enable>no</enable>
+                </lldp>
+                <interface-management-profile>Allow-mgt</interface-management-profile>
+              </layer3>
+              <comment>Extranet servers connection</comment>
+            </entry>
+            <entry name="ethernet1/4">
+              <virtual-wire>
+                <lldp>
+                  <enable>no</enable>
+                </lldp>
+              </virtual-wire>
+            </entry>
+            <entry name="ethernet1/5">
+              <virtual-wire>
+                <lldp>
+                  <enable>no</enable>
+                </lldp>
+              </virtual-wire>
+            </entry>
+          </ethernet>
+        </interface>
+        <profiles>
+          <monitor-profile>
+            <entry name="default">
+              <interval>3</interval>
+              <threshold>5</threshold>
+              <action>wait-recover</action>
+            </entry>
+          </monitor-profile>
+          <interface-management-profile>
+            <entry name="Allow-ping">
+              <ping>yes</ping>
+            </entry>
+            <entry name="Allow-mgt">
+              <https>yes</https>
+              <snmp>yes</snmp>
+              <userid-service>no</userid-service>
+              <ping>yes</ping>
+              <response-pages>yes</response-pages>
+              <ssh>yes</ssh>
+            </entry>
+          </interface-management-profile>
+        </profiles>
+        <ike>
+          <crypto-profiles>
+            <ike-crypto-profiles>
+              <entry name="default">
+                <encryption>
+                  <member>aes-128-cbc</member>
+                  <member>3des</member>
+                </encryption>
+                <hash>
+                  <member>sha1</member>
+                </hash>
+                <dh-group>
+                  <member>group2</member>
+                </dh-group>
+                <lifetime>
+                  <hours>8</hours>
+                </lifetime>
+              </entry>
+              <entry name="Suite-B-GCM-128">
+                <encryption>
+                  <member>aes-128-cbc</member>
+                </encryption>
+                <hash>
+                  <member>sha256</member>
+                </hash>
+                <dh-group>
+                  <member>group19</member>
+                </dh-group>
+                <lifetime>
+                  <hours>8</hours>
+                </lifetime>
+              </entry>
+              <entry name="Suite-B-GCM-256">
+                <encryption>
+                  <member>aes-256-cbc</member>
+                </encryption>
+                <hash>
+                  <member>sha384</member>
+                </hash>
+                <dh-group>
+                  <member>group20</member>
+                </dh-group>
+                <lifetime>
+                  <hours>8</hours>
+                </lifetime>
+              </entry>
+            </ike-crypto-profiles>
+            <ipsec-crypto-profiles>
+              <entry name="default">
+                <esp>
+                  <encryption>
+                    <member>aes-128-cbc</member>
+                    <member>3des</member>
+                  </encryption>
+                  <authentication>
+                    <member>sha1</member>
+                  </authentication>
+                </esp>
+                <dh-group>group2</dh-group>
+                <lifetime>
+                  <hours>1</hours>
+                </lifetime>
+              </entry>
+              <entry name="Suite-B-GCM-128">
+                <esp>
+                  <encryption>
+                    <member>aes-128-gcm</member>
+                  </encryption>
+                  <authentication>
+                    <member>none</member>
+                  </authentication>
+                </esp>
+                <dh-group>group19</dh-group>
+                <lifetime>
+                  <hours>1</hours>
+                </lifetime>
+              </entry>
+              <entry name="Suite-B-GCM-256">
+                <esp>
+                  <encryption>
+                    <member>aes-256-gcm</member>
+                  </encryption>
+                  <authentication>
+                    <member>none</member>
+                  </authentication>
+                </esp>
+                <dh-group>group20</dh-group>
+                <lifetime>
+                  <hours>1</hours>
+                </lifetime>
+              </entry>
+            </ipsec-crypto-profiles>
+            <global-protect-app-crypto-profiles>
+              <entry name="default">
+                <encryption>
+                  <member>aes-128-cbc</member>
+                </encryption>
+                <authentication>
+                  <member>sha1</member>
+                </authentication>
+              </entry>
+            </global-protect-app-crypto-profiles>
+          </crypto-profiles>
+        </ike>
+        <qos>
+          <profile>
+            <entry name="default">
+              <class-bandwidth-type>
+                <mbps>
+                  <class>
+                    <entry name="class1">
+                      <priority>real-time</priority>
+                    </entry>
+                    <entry name="class2">
+                      <priority>high</priority>
+                    </entry>
+                    <entry name="class3">
+                      <priority>high</priority>
+                    </entry>
+                    <entry name="class4">
+                      <priority>medium</priority>
+                    </entry>
+                    <entry name="class5">
+                      <priority>medium</priority>
+                    </entry>
+                    <entry name="class6">
+                      <priority>low</priority>
+                    </entry>
+                    <entry name="class7">
+                      <priority>low</priority>
+                    </entry>
+                    <entry name="class8">
+                      <priority>low</priority>
+                    </entry>
+                  </class>
+                </mbps>
+              </class-bandwidth-type>
+            </entry>
+          </profile>
+        </qos>
+        <virtual-router>
+          <entry name="default">
+            <protocol>
+              <bgp>
+                <enable>no</enable>
+                <dampening-profile>
+                  <entry name="default">
+                    <cutoff>1.25</cutoff>
+                    <reuse>0.5</reuse>
+                    <max-hold-time>900</max-hold-time>
+                    <decay-half-life-reachable>300</decay-half-life-reachable>
+                    <decay-half-life-unreachable>900</decay-half-life-unreachable>
+                    <enable>yes</enable>
+                  </entry>
+                </dampening-profile>
+              </bgp>
+            </protocol>
+          </entry>
+          <entry name="VR-1">
+            <ecmp>
+              <algorithm>
+                <ip-modulo/>
+              </algorithm>
+            </ecmp>
+            <protocol>
+              <bgp>
+                <routing-options>
+                  <graceful-restart>
+                    <enable>yes</enable>
+                  </graceful-restart>
+                </routing-options>
+                <enable>no</enable>
+              </bgp>
+              <rip>
+                <enable>no</enable>
+              </rip>
+              <ospf>
+                <enable>no</enable>
+              </ospf>
+              <ospfv3>
+                <enable>no</enable>
+              </ospfv3>
+            </protocol>
+            <routing-table>
+              <ip>
+                <static-route>
+                  <entry name="Firewall-Default-Gateway">
+                    <nexthop>
+                      <ip-address>203.0.113.1</ip-address>
+                    </nexthop>
+                    <bfd>
+                      <profile>None</profile>
+                    </bfd>
+                    <interface>ethernet1/1</interface>
+                    <metric>10</metric>
+                    <destination>0.0.0.0/0</destination>
+                    <route-table>
+                      <unicast/>
+                    </route-table>
+                  </entry>
+                </static-route>
+              </ip>
+            </routing-table>
+            <interface>
+              <member>ethernet1/1</member>
+              <member>ethernet1/2</member>
+              <member>ethernet1/3</member>
+            </interface>
+          </entry>
+        </virtual-router>
+        <virtual-wire>
+          <entry name="Virtual-Wire-4-5">
+            <link-state-pass-through>
+              <enable>no</enable>
+            </link-state-pass-through>
+            <interface1>ethernet1/4</interface1>
+            <interface2>ethernet1/5</interface2>
+          </entry>
+        </virtual-wire>
+      </network>
+      <deviceconfig>
+        <system>
+          <type>
+            <static/>
+          </type>
+          <update-server>updates.paloaltonetworks.com</update-server>
+          <update-schedule>
+            <threats>
+              <recurring>
+                <weekly>
+                  <day-of-week>wednesday</day-of-week>
+                  <at>01:02</at>
+                  <action>download-only</action>
+                </weekly>
+              </recurring>
+            </threats>
+          </update-schedule>
+          <timezone>UTC</timezone>
+          <service>
+            <disable-telnet>yes</disable-telnet>
+            <disable-http>yes</disable-http>
+          </service>
+          <hostname>firewall-a</hostname>
+          <ip-address>192.168.1.254</ip-address>
+          <netmask>255.255.255.0</netmask>
+          <default-gateway>192.168.1.1</default-gateway>
+          <dns-setting>
+            <servers>
+              <primary>8.8.8.8</primary>
+              <secondary>192.168.50.53</secondary>
+            </servers>
+          </dns-setting>
+          <ntp-servers>
+            <primary-ntp-server>
+              <ntp-server-address>0.pool.ntp.org</ntp-server-address>
+              <authentication-type>
+                <none/>
+              </authentication-type>
+            </primary-ntp-server>
+            <secondary-ntp-server>
+              <ntp-server-address>1.pool.ntp.org</ntp-server-address>
+              <authentication-type>
+                <none/>
+              </authentication-type>
+            </secondary-ntp-server>
+          </ntp-servers>
+          <geo-location>
+            <latitude>37.00</latitude>
+            <longitude>122.00</longitude>
+          </geo-location>
+          <device-telemetry>
+            <device-health-performance>yes</device-health-performance>
+            <product-usage>yes</product-usage>
+            <threat-prevention>yes</threat-prevention>
+            <region>americas</region>
+          </device-telemetry>
+          <locale>en</locale>
+          <domain>panw.lab</domain>
+          <login-banner>Authorized Access Only</login-banner>
+          <permitted-ip>
+            <entry name="192.168.0.0/16">
+              <description>Mgt access from these hosts only.</description>
+            </entry>
+          </permitted-ip>
+          <route>
+            <service/>
+          </route>
+        </system>
+        <setting>
+          <config>
+            <rematch>yes</rematch>
+          </config>
+          <management>
+            <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
+            <idle-timeout>0</idle-timeout>
+            <disable-predefined-reports>
+              <member>spyware-infected-hosts</member>
+              <member>top-application-categories</member>
+              <member>top-technology-categories</member>
+              <member>bandwidth-trend</member>
+              <member>risk-trend</member>
+              <member>threat-trend</member>
+              <member>top-users</member>
+              <member>top-attacker-sources</member>
+              <member>top-attacker-destinations</member>
+              <member>top-victim-sources</member>
+              <member>top-victim-destinations</member>
+              <member>top-attackers-by-source-countries</member>
+              <member>top-attackers-by-destination-countries</member>
+              <member>top-victims-by-source-countries</member>
+              <member>top-victims-by-destination-countries</member>
+              <member>top-sources</member>
+              <member>top-destinations</member>
+              <member>top-destination-countries</member>
+              <member>top-source-countries</member>
+              <member>top-connections</member>
+              <member>top-ingress-interfaces</member>
+              <member>top-egress-interfaces</member>
+              <member>top-ingress-zones</member>
+              <member>top-egress-zones</member>
+              <member>top-applications</member>
+              <member>top-http-applications</member>
+              <member>top-rules</member>
+              <member>top-attacks</member>
+              <member>top-spyware-threats</member>
+              <member>top-viruses</member>
+              <member>top-vulnerabilities</member>
+              <member>wildfire-file-digests</member>
+              <member>top-websites</member>
+              <member>top-url-categories</member>
+              <member>top-url-users</member>
+              <member>top-url-user-behavior</member>
+              <member>top-blocked-websites</member>
+              <member>top-blocked-url-categories</member>
+              <member>top-blocked-url-users</member>
+              <member>top-blocked-url-user-behavior</member>
+              <member>blocked-credential-post</member>
+              <member>unknown-tcp-connections</member>
+              <member>unknown-udp-connections</member>
+              <member>top-denied-sources</member>
+              <member>top-denied-destinations</member>
+              <member>top-denied-applications</member>
+              <member>risky-users</member>
+              <member>SaaS Application Usage</member>
+              <member>gtp-events-summary</member>
+              <member>gtp-malicious-wildfire-submissions</member>
+              <member>gtp-security-events</member>
+              <member>gtp-v1-causes</member>
+              <member>gtp-v2-causes</member>
+              <member>gtp-users-visiting-malicious-url</member>
+              <member>top-gtp-attacker-destinations</member>
+              <member>top-gtp-attacker-sources</member>
+              <member>top-gtp-victim-destinations</member>
+              <member>top-gtp-victim-sources</member>
+              <member>sctp-error-causes</member>
+              <member>sctp-events-summary</member>
+              <member>sctp-security-events</member>
+            </disable-predefined-reports>
+            <auto-acquire-commit-lock>no</auto-acquire-commit-lock>
+          </management>
+          <auto-mac-detect>yes</auto-mac-detect>
+          <application>
+            <notify-user>yes</notify-user>
+          </application>
+          <wildfire>
+            <report-benign-file>yes</report-benign-file>
+            <report-grayware-file>yes</report-grayware-file>
+          </wildfire>
+        </setting>
+      </deviceconfig>
+      <vsys>
+        <entry name="vsys1">
+          <application/>
+          <application-group>
+            <entry name="paloalto-apps">
+              <members>
+                <member>paloalto-dns-security</member>
+                <member>paloalto-updates</member>
+                <member>paloalto-userid-agent</member>
+                <member>paloalto-wildfire-cloud</member>
+                <member>pan-db-cloud</member>
+              </members>
+            </entry>
+            <entry name="Allowed-Corp-Apps">
+              <members>
+                <member>dns</member>
+                <member>web-browsing</member>
+                <member>ssl</member>
+              </members>
+            </entry>
+            <entry name="Allowed-Mktg-Apps">
+              <members>
+                <member>facebook-base</member>
+                <member>instagram-base</member>
+                <member>twitter-base</member>
+                <member>myspace-base</member>
+                <member>linkedin-base</member>
+              </members>
+            </entry>
+          </application-group>
+          <zone>
+            <entry name="Internet">
+              <network>
+                <layer3>
+                  <member>ethernet1/1</member>
+                </layer3>
+              </network>
+            </entry>
+            <entry name="Users_Net">
+              <network>
+                <layer3>
+                  <member>ethernet1/2</member>
+                </layer3>
+              </network>
+            </entry>
+            <entry name="Extranet">
+              <network>
+                <layer3>
+                  <member>ethernet1/3</member>
+                </layer3>
+              </network>
+            </entry>
+            <entry name="Acquisition">
+              <network>
+                <virtual-wire>
+                  <member>ethernet1/4</member>
+                  <member>ethernet1/5</member>
+                </virtual-wire>
+              </network>
+              <enable-user-identification>yes</enable-user-identification>
+            </entry>
+          </zone>
+          <service/>
+          <service-group/>
+          <schedule/>
+          <rulebase>
+            <security>
+              <rules>
+                <entry name="Block-Bad-URLs" uuid="3c857eea-126f-479d-a236-4e6c77fa9020">
+                  <to>
+                    <member>Internet</member>
+                  </to>
+                  <from>
+                    <member>Users_Net</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>adult</member>
+                    <member>Block-Per-Company-Policy</member>
+                    <member>command-and-control</member>
+                    <member>extremism</member>
+                    <member>hacking</member>
+                    <member>high-risk</member>
+                    <member>malicious-urls-edl</member>
+                    <member>malware</member>
+                    <member>nudity</member>
+                    <member>parked</member>
+                    <member>peer-to-peer</member>
+                    <member>phishing</member>
+                    <member>proxy-avoidance-and-anonymizers</member>
+                    <member>questionable</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>deny</action>
+                  <rule-type>universal</rule-type>
+                  <description>Blocks bad URLs based on categories</description>
+                  <disabled>yes</disabled>
+                </entry>
+                <entry name="Block-from-Known-Bad-Addresses" uuid="9e1f9abb-6973-44d3-97dc-5daeb3843f2e">
+                  <to>
+                    <member>Extranet</member>
+                    <member>Users_Net</member>
+                  </to>
+                  <from>
+                    <member>Internet</member>
+                  </from>
+                  <source>
+                    <member>panw-bulletproof-ip-list</member>
+                    <member>panw-highrisk-ip-list</member>
+                    <member>panw-known-ip-list</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>deny</action>
+                  <rule-type>universal</rule-type>
+                  <description>Blocks traffic from known bad IP addresses to Users and Extranet</description>
+                </entry>
+                <entry name="Block-to-Known-Bad-Addresses" uuid="7e1c8d77-19e5-4db8-855b-e2d8f35e0662">
+                  <to>
+                    <member>Internet</member>
+                  </to>
+                  <from>
+                    <member>Extranet</member>
+                    <member>Users_Net</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>panw-bulletproof-ip-list</member>
+                    <member>panw-highrisk-ip-list</member>
+                    <member>panw-known-ip-list</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>deny</action>
+                  <rule-type>universal</rule-type>
+                  <description>Blocks traffic from Users and Extranet to known bad IP addresses</description>
+                </entry>
+                <entry name="Allow-PANW-Apps" uuid="fed2b720-af52-4d41-8e8f-5e4dce7c1ece">
+                  <to>
+                    <member>Internet</member>
+                  </to>
+                  <from>
+                    <member>Users_Net</member>
+                  </from>
+                  <source>
+                    <member>192.168.1.254</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>paloalto-apps</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <rule-type>universal</rule-type>
+                  <description>Allows PANW apps for firewall</description>
+                  <profile-setting>
+                    <group>
+                      <member>Corp-Profiles-Group</member>
+                    </group>
+                  </profile-setting>
+                </entry>
+                <entry name="Users_to_Extranet" uuid="8bf98e18-afd2-4d5c-b999-3c534383b11d">
+                  <to>
+                    <member>Extranet</member>
+                  </to>
+                  <from>
+                    <member>Users_Net</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>dns</member>
+                    <member>ldap</member>
+                    <member>ping</member>
+                    <member>radius</member>
+                    <member>ssh</member>
+                    <member>ssl</member>
+                    <member>web-browsing</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <rule-type>universal</rule-type>
+                  <description>Allows hosts in the Users_Net zone to access servers in the Extranet zone.</description>
+                  <profile-setting>
+                    <group>
+                      <member>Corp-Profiles-Group</member>
+                    </group>
+                  </profile-setting>
+                </entry>
+                <entry name="Users_to_Internet" uuid="f9aabfc2-e4be-400b-b5e4-1e5ed151f715">
+                  <to>
+                    <member>Internet</member>
+                  </to>
+                  <from>
+                    <member>Users_Net</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>dns</member>
+                    <member>dropbox</member>
+                    <member>google-base</member>
+                    <member>ms-office365</member>
+                    <member>ping</member>
+                    <member>rtcp</member>
+                    <member>rtp-base</member>
+                    <member>ssh</member>
+                    <member>ssl</member>
+                    <member>stun</member>
+                    <member>web-browsing</member>
+                    <member>yelp</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <rule-type>universal</rule-type>
+                  <description>Allows hosts in Users_Net zone to access Internet zone.</description>
+                  <profile-setting>
+                    <group>
+                      <member>Corp-Profiles-Group</member>
+                    </group>
+                  </profile-setting>
+                </entry>
+                <entry name="Extranet_to_Internet" uuid="2e74b447-cd15-4676-abb5-b97daf583849">
+                  <to>
+                    <member>Internet</member>
+                  </to>
+                  <from>
+                    <member>Extranet</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <rule-type>universal</rule-type>
+                  <description>Allows hosts in the Extranet zone to access Internet zone.</description>
+                  <profile-setting>
+                    <group>
+                      <member>Corp-Profiles-Group</member>
+                    </group>
+                  </profile-setting>
+                </entry>
+                <entry name="Extranet_to_User_Net" uuid="9762f840-7ead-4021-a4ae-253c27f48d9f">
+                  <to>
+                    <member>Users_Net</member>
+                  </to>
+                  <from>
+                    <member>Extranet</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>ssl</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <rule-type>universal</rule-type>
+                  <description>Allows hosts in the Extranet zone to access hosts in the User_Net zone. </description>
+                  <profile-setting>
+                    <group>
+                      <member>Corp-Profiles-Group</member>
+                    </group>
+                  </profile-setting>
+                </entry>
+                <entry name="Allow-Corp-Apps" uuid="f1b9959a-9be7-4dfe-a37c-bd376af69a38">
+                  <to>
+                    <member>any</member>
+                  </to>
+                  <from>
+                    <member>Acquisition</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>Allowed-Corp-Apps</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <rule-type>universal</rule-type>
+                  <description>Allows only approved apps for Acquisition users</description>
+                  <profile-setting>
+                    <group>
+                      <member>Corp-Profiles-Group</member>
+                    </group>
+                  </profile-setting>
+                </entry>
+                <entry name="Allow-Mktg-Apps" uuid="3f5533c8-4692-4465-afcb-32a8d21593af">
+                  <to>
+                    <member>any</member>
+                  </to>
+                  <from>
+                    <member>Acquisition</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>marketing</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>Allowed-Mktg-Apps</member>
+                    <member>apple-maps</member>
+                    <member>google-base</member>
+                    <member>google-maps</member>
+                    <member>ssl</member>
+                    <member>web-browsing</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <rule-type>universal</rule-type>
+                  <description>Allows only users of marketing group to access Mktg apps</description>
+                </entry>
+                <entry name="Deny-All-Others" uuid="69e0a32f-8d32-4915-bca8-6797488afddd">
+                  <to>
+                    <member>any</member>
+                  </to>
+                  <from>
+                    <member>Acquisition</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>deny</action>
+                  <rule-type>universal</rule-type>
+                  <description>Denies non-approved applications for users in the Acquisition zone</description>
+                </entry>
+              </rules>
+            </security>
+            <default-security-rules>
+              <rules>
+                <entry name="interzone-default" uuid="85b2b27d-2511-43d5-a9f2-954c504e0ea8">
+                  <action>deny</action>
+                  <log-start>no</log-start>
+                  <log-end>yes</log-end>
+                </entry>
+              </rules>
+            </default-security-rules>
+            <nat>
+              <rules>
+                <entry name="Inside_Nets_to_Internet" uuid="064dfc1d-f6d1-4c47-a029-abc22c14a694">
+                  <source-translation>
+                    <dynamic-ip-and-port>
+                      <interface-address>
+                        <ip>203.0.113.20/24</ip>
+                        <interface>ethernet1/1</interface>
+                      </interface-address>
+                    </dynamic-ip-and-port>
+                  </source-translation>
+                  <to>
+                    <member>Internet</member>
+                  </to>
+                  <from>
+                    <member>Extranet</member>
+                    <member>Users_Net</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <service>any</service>
+                  <description>Translates traffic from Users_Net and Extranet to 203.0.113.20 outbound to Internet</description>
+                  <to-interface>ethernet1/1</to-interface>
+                </entry>
+                <entry name="Dest_NAT_to_Webserver" uuid="4325ca5d-73d0-4c54-aac9-2e3eaee46739">
+                  <destination-translation>
+                    <translated-address>192.168.50.80</translated-address>
+                  </destination-translation>
+                  <to>
+                    <member>Users_Net</member>
+                  </to>
+                  <from>
+                    <member>Users_Net</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>192.168.1.80</member>
+                  </destination>
+                  <service>any</service>
+                  <description>Translates traffic to webserver at 192.168.50.80</description>
+                  <to-interface>ethernet1/2</to-interface>
+                </entry>
+              </rules>
+            </nat>
+            <decryption>
+              <rules>
+                <entry name="No-Decryption" uuid="e275e2c0-4430-4546-8e82-d3305102da65">
+                  <category>
+                    <member>financial-services</member>
+                    <member>government</member>
+                    <member>shopping</member>
+                  </category>
+                  <service>
+                    <member>any</member>
+                  </service>
+                  <type>
+                    <ssl-forward-proxy/>
+                  </type>
+                  <from>
+                    <member>Users_Net</member>
+                  </from>
+                  <to>
+                    <member>Internet</member>
+                  </to>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>no-decrypt</action>
+                  <profile>default</profile>
+                  <description>Do not decrypt URLS in gov, shopping and finance</description>
+                </entry>
+                <entry name="Decrypt_User_Traffic" uuid="82f31c3f-f053-4230-b86b-1fa602ef5f23">
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <service>
+                    <member>any</member>
+                  </service>
+                  <type>
+                    <ssl-forward-proxy/>
+                  </type>
+                  <from>
+                    <member>Users_Net</member>
+                  </from>
+                  <to>
+                    <member>Extranet</member>
+                    <member>Internet</member>
+                  </to>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>decrypt</action>
+                  <profile>default</profile>
+                  <description>Decrypts web traffic from Users_Net</description>
+                </entry>
+              </rules>
+            </decryption>
+          </rulebase>
+          <user-id-collector>
+            <setting/>
+          </user-id-collector>
+          <import>
+            <network>
+              <interface>
+                <member>ethernet1/1</member>
+                <member>ethernet1/2</member>
+                <member>ethernet1/3</member>
+                <member>ethernet1/4</member>
+                <member>ethernet1/5</member>
+              </interface>
+            </network>
+          </import>
+          <profiles>
+            <virus>
+              <entry name="Corp-AV">
+                <decoder>
+                  <entry name="http">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="http2">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="smtp">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="imap">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="pop3">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="ftp">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="smb">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                </decoder>
+                <mlav-engine-filebased-enabled>
+                  <entry name="Windows Executables">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                  <entry name="PowerShell Script 1">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                  <entry name="PowerShell Script 2">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                </mlav-engine-filebased-enabled>
+                <description>Standard corporate antivirus profile for all security policy rules</description>
+              </entry>
+            </virus>
+            <vulnerability>
+              <entry name="Corp-Vuln">
+                <rules>
+                  <entry name="simple-client-critical">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>critical</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-client-high">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>high</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-client-medium">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>medium</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-client-informational">
+                    <action>
+                      <default/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>informational</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-client-low">
+                    <action>
+                      <default/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>low</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-critical">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>critical</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-high">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>high</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-medium">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>medium</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-informational">
+                    <action>
+                      <default/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>informational</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-low">
+                    <action>
+                      <default/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>low</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                </rules>
+                <description>Standard vulnerability profile for all security policy rules</description>
+              </entry>
+            </vulnerability>
+            <file-blocking>
+              <entry name="Corp-FileBlock">
+                <rules>
+                  <entry name="Block all risky file types">
+                    <application>
+                      <member>any</member>
+                    </application>
+                    <direction>both</direction>
+                    <action>block</action>
+                    <file-type>
+                      <member>7z</member>
+                      <member>bat</member>
+                      <member>cab</member>
+                      <member>chm</member>
+                      <member>class</member>
+                      <member>cpl</member>
+                      <member>dll</member>
+                      <member>flash</member>
+                      <member>hlp</member>
+                      <member>hta</member>
+                      <member>jar</member>
+                      <member>msi</member>
+                      <member>Multi-Level-Encoding</member>
+                      <member>ocx</member>
+                      <member>PE</member>
+                      <member>pif</member>
+                      <member>rar</member>
+                      <member>scr</member>
+                      <member>tar</member>
+                      <member>torrent</member>
+                      <member>vbe</member>
+                      <member>wsf</member>
+                    </file-type>
+                  </entry>
+                  <entry name="Block encrypted files">
+                    <application>
+                      <member>any</member>
+                    </application>
+                    <direction>both</direction>
+                    <action>block</action>
+                    <file-type>
+                      <member>encrypted-rar</member>
+                      <member>encrypted-zip</member>
+                    </file-type>
+                  </entry>
+                  <entry name="Log all other file types">
+                    <application>
+                      <member>any</member>
+                    </application>
+                    <direction>both</direction>
+                    <action>alert</action>
+                    <file-type>
+                      <member>any</member>
+                    </file-type>
+                  </entry>
+                </rules>
+                <description>Standard file blocking profile for all security policy rules</description>
+              </entry>
+            </file-blocking>
+            <data-objects>
+              <entry name="US-SSNs">
+                <pattern-type>
+                  <predefined>
+                    <pattern>
+                      <entry name="social-security-numbers">
+                        <file-type>
+                          <member>any</member>
+                        </file-type>
+                      </entry>
+                      <entry name="social-security-numbers-without-dash">
+                        <file-type>
+                          <member>any</member>
+                        </file-type>
+                      </entry>
+                    </pattern>
+                  </predefined>
+                </pattern-type>
+                <description>US Social Security Numbers</description>
+              </entry>
+            </data-objects>
+            <data-filtering>
+              <entry name="Corp-DataFilter">
+                <rules>
+                  <entry name="rule0">
+                    <application>
+                      <member>any</member>
+                    </application>
+                    <direction>both</direction>
+                    <alert-threshold>1</alert-threshold>
+                    <block-threshold>3</block-threshold>
+                    <data-object>US-SSNs</data-object>
+                    <log-severity>critical</log-severity>
+                    <file-type>
+                      <member>any</member>
+                    </file-type>
+                  </entry>
+                </rules>
+                <description>Standard data filtering profile for all security policy rules</description>
+              </entry>
+            </data-filtering>
+            <spyware>
+              <entry name="Corp-AS">
+                <rules>
+                  <entry name="simple-critical">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <severity>
+                      <member>critical</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-high">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <severity>
+                      <member>high</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-medium">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <severity>
+                      <member>medium</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-informational">
+                    <action>
+                      <default/>
+                    </action>
+                    <severity>
+                      <member>informational</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-low">
+                    <action>
+                      <default/>
+                    </action>
+                    <severity>
+                      <member>low</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                </rules>
+                <botnet-domains>
+                  <lists>
+                    <entry name="malicious-domains-edl">
+                      <action>
+                        <sinkhole/>
+                      </action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="default-paloalto-dns">
+                      <action>
+                        <sinkhole/>
+                      </action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                  </lists>
+                  <dns-security-categories>
+                    <entry name="pan-dns-sec-cc">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-ddns">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-grayware">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-malware">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-parked">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-phishing">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-recent">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                  </dns-security-categories>
+                  <sinkhole>
+                    <ipv4-address>pan-sinkhole-default-ip</ipv4-address>
+                    <ipv6-address>::1</ipv6-address>
+                  </sinkhole>
+                </botnet-domains>
+                <description>Standard anti-spyware profile for all security policy rules</description>
+              </entry>
+            </spyware>
+            <url-filtering>
+              <entry name="Corp-URL-Profile">
+                <credential-enforcement>
+                  <mode>
+                    <disabled/>
+                  </mode>
+                  <log-severity>medium</log-severity>
+                  <block>
+                    <member>Block-Per-Company-Policy</member>
+                    <member>adult</member>
+                    <member>command-and-control</member>
+                    <member>copyright-infringement</member>
+                    <member>extremism</member>
+                    <member>hacking</member>
+                    <member>high-risk</member>
+                    <member>malware</member>
+                    <member>nudity</member>
+                    <member>parked</member>
+                    <member>peer-to-peer</member>
+                    <member>phishing</member>
+                    <member>proxy-avoidance-and-anonymizers</member>
+                    <member>questionable</member>
+                    <member>unknown</member>
+                  </block>
+                </credential-enforcement>
+                <description>Standard corporate URL profile for all security policy rules</description>
+                <mlav-engine-urlbased-enabled>
+                  <entry name="Phishing Detection">
+                    <mlav-policy-action>allow</mlav-policy-action>
+                  </entry>
+                  <entry name="Javascript Exploit Detection">
+                    <mlav-policy-action>allow</mlav-policy-action>
+                  </entry>
+                </mlav-engine-urlbased-enabled>
+                <alert>
+                  <member>abortion</member>
+                  <member>abused-drugs</member>
+                  <member>alcohol-and-tobacco</member>
+                  <member>auctions</member>
+                  <member>business-and-economy</member>
+                  <member>computer-and-internet-info</member>
+                  <member>content-delivery-networks</member>
+                  <member>cryptocurrency</member>
+                  <member>dating</member>
+                  <member>dynamic-dns</member>
+                  <member>educational-institutions</member>
+                  <member>entertainment-and-arts</member>
+                  <member>financial-services</member>
+                  <member>gambling</member>
+                  <member>games</member>
+                  <member>government</member>
+                  <member>grayware</member>
+                  <member>health-and-medicine</member>
+                  <member>home-and-garden</member>
+                  <member>hunting-and-fishing</member>
+                  <member>insufficient-content</member>
+                  <member>internet-communications-and-telephony</member>
+                  <member>internet-portals</member>
+                  <member>job-search</member>
+                  <member>legal</member>
+                  <member>low-risk</member>
+                  <member>medium-risk</member>
+                  <member>military</member>
+                  <member>motor-vehicles</member>
+                  <member>music</member>
+                  <member>newly-registered-domain</member>
+                  <member>news</member>
+                  <member>not-resolved</member>
+                  <member>online-storage-and-backup</member>
+                  <member>personal-sites-and-blogs</member>
+                  <member>philosophy-and-political-advocacy</member>
+                  <member>private-ip-addresses</member>
+                  <member>real-estate</member>
+                  <member>recreation-and-hobbies</member>
+                  <member>reference-and-research</member>
+                  <member>religion</member>
+                  <member>search-engines</member>
+                  <member>sex-education</member>
+                  <member>shareware-and-freeware</member>
+                  <member>shopping</member>
+                  <member>social-networking</member>
+                  <member>society</member>
+                  <member>sports</member>
+                  <member>stock-advice-and-tools</member>
+                  <member>streaming-media</member>
+                  <member>swimsuits-and-intimate-apparel</member>
+                  <member>training-and-tools</member>
+                  <member>translation</member>
+                  <member>travel</member>
+                  <member>weapons</member>
+                  <member>web-advertisements</member>
+                  <member>web-based-email</member>
+                  <member>web-hosting</member>
+                </alert>
+                <block>
+                  <member>Block-Per-Company-Policy</member>
+                  <member>adult</member>
+                  <member>command-and-control</member>
+                  <member>copyright-infringement</member>
+                  <member>extremism</member>
+                  <member>hacking</member>
+                  <member>high-risk</member>
+                  <member>malware</member>
+                  <member>nudity</member>
+                  <member>parked</member>
+                  <member>peer-to-peer</member>
+                  <member>phishing</member>
+                  <member>proxy-avoidance-and-anonymizers</member>
+                  <member>questionable</member>
+                  <member>unknown</member>
+                </block>
+              </entry>
+            </url-filtering>
+            <custom-url-category>
+              <entry name="Block-Per-Company-Policy">
+                <list>
+                  <member>*.nbcnews.com</member>
+                  <member>*.theguardian.com</member>
+                </list>
+                <type>URL List</type>
+                <description>URLs that are blocked by company policy</description>
+              </entry>
+            </custom-url-category>
+            <wildfire-analysis>
+              <entry name="Corp-WF">
+                <rules>
+                  <entry name="All_Files">
+                    <application>
+                      <member>any</member>
+                    </application>
+                    <direction>both</direction>
+                    <analysis>public-cloud</analysis>
+                    <file-type>
+                      <member>any</member>
+                    </file-type>
+                  </entry>
+                </rules>
+                <description>Wildfire profile for Corp security rules</description>
+              </entry>
+            </wildfire-analysis>
+          </profiles>
+          <external-list>
+            <entry name="malicious-domains-edl">
+              <type>
+                <domain>
+                  <recurring>
+                    <five-minute/>
+                  </recurring>
+                  <expand-domain>yes</expand-domain>
+                  <description>Custom list of bad domains maintained on Extranet server</description>
+                  <url>http://192.168.50.80/malicious-domains.txt</url>
+                </domain>
+              </type>
+            </entry>
+            <entry name="malicious-urls-edl">
+              <type>
+                <url>
+                  <recurring>
+                    <five-minute/>
+                  </recurring>
+                  <description>List of malicious URLs maintained on Extranet server</description>
+                  <url>http://192.168.50.80/malicious-urls.txt</url>
+                </url>
+              </type>
+            </entry>
+          </external-list>
+          <profile-group>
+            <entry name="Corp-Profiles-Group">
+              <virus>
+                <member>Corp-AV</member>
+              </virus>
+              <spyware>
+                <member>Corp-AS</member>
+              </spyware>
+              <vulnerability>
+                <member>Corp-Vuln</member>
+              </vulnerability>
+              <file-blocking>
+                <member>Corp-FileBlock</member>
+              </file-blocking>
+              <data-filtering>
+                <member>Corp-DataFilter</member>
+              </data-filtering>
+              <url-filtering>
+                <member>Corp-URL-Profile</member>
+              </url-filtering>
+              <wildfire-analysis>
+                <member>Corp-WF</member>
+              </wildfire-analysis>
+            </entry>
+          </profile-group>
+        </entry>
+      </vsys>
+    </entry>
+  </devices>
+</config>

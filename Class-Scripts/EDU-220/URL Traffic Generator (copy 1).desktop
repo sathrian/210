@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=URL Traffic Generator
+Comment=Polls Panorama with SNMP
+Exec=/home/lab-user/Desktop/Lab-Files/EDU-220/snmpscript.sh
+Icon=utilities-system-monitor
+Path=/home/lab-user/Desktop/Lab-Files/EDU-220/
+Terminal=true
+StartupNotify=false
+Name[en_US]=SNMP Utility

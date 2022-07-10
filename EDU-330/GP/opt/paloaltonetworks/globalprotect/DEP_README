@@ -1,0 +1,31 @@
+###############################################
+# GlobalProtect Linux UI Install Dependencies #
+###############################################
+
+### Overview ###
+
+# GlobalProtect Linux UI is dependent on the installation of the Qt framework
+# which also has package dependencies. This README will explain how the user
+# can install these on their system. The dependencies can be installed with
+# an automated script or manually.
+
+####################
+### RHE / CentOS ###
+####################
+
+# Automated 
+$ sudo ./gpui_yum_dep.sh
+
+# Manual 
+$ wget http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/q/qt5-qtwebkit-5.9.1-2.el7.x86_64.rpm
+$ sudo yum -y install qt5-qtwebkit-5.9.1-2.el7.x86_64.rpm
+
+##############
+### Ubuntu ###
+##############
+
+# Automated
+$ sudo ./gpui_apt_dep.sh
+
+# Manual
+$ sudo apt-get install -y libqt5webkit5
